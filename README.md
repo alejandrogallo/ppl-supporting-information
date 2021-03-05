@@ -2,14 +2,13 @@
 **Table of Contents**
 
 - [Introduction](#introduction)
-- [Overview of the contents](#overview-of-the-contents)
-    - [Molecular geometries](#molecular-geometries)
-    - [Chemical reactions list](#chemical-reactions-list)
-    - [`PSI4` calculations output](#psi4-calculations-output)
-    - [Calculated energies](#calculated-energies)
-        - [`PSI4`](#psi4)
-        - [`TURBOMOLE`](#turbomole)
-        - [`NWCHEM+CC4S`](#nwchemcc4s)
+- [Molecular geometries](#molecular-geometries)
+- [Chemical reactions list](#chemical-reactions-list)
+- [`PSI4` calculations output](#psi4-calculations-output)
+- [Calculated energies](#calculated-energies)
+    - [`PSI4`](#psi4)
+    - [`TURBOMOLE`](#turbomole)
+    - [`NWCHEM+CC4S`](#nwchemcc4s)
 
 <!-- markdown-toc end -->
 
@@ -27,9 +26,7 @@ Note that for all calculations, the HF groundstate energy between
 agreed better than 1.5E-5 Hartree.
 
 
-# Overview of the contents
-
-## Molecular geometries
+# Molecular geometries #
 
 The list of used molecular geometries taken from the supplement of
 [this publication](https://doi.org/10.1063/1.3054300).
@@ -37,7 +34,8 @@ In this repository the list is found in the file:
 
 - `jcp_systems.dat`
 
-## Chemical reactions list
+# Chemical reactions list #
+
 Lists of reactions analysed in the given publication
 
 - `list.closedshell`
@@ -46,7 +44,7 @@ Lists of reactions analysed in the given publication
 - `list.ip`
 - `list.ea`
 
-## `PSI4` calculations output
+# `PSI4` calculations output #
 
 The stdout of `PSI4` calculations for the given set of molecules.
 For techncical reasons two independent calculations were necessary for
@@ -58,7 +56,7 @@ modified (see [this publication](https://doi.org/10.1063/1.5110885)):
 - `psi4_ppl_data/`
 - `psi4_triples_data/`
 
-## Calculated energies
+# Calculated energies #
 
 Extracted energy contributions of the individual molecules
 for different basis sets from `PSI4`, `TURBOMOLE` (f12...), and
@@ -67,7 +65,7 @@ for different basis sets from `PSI4`, `TURBOMOLE` (f12...), and
 All energies in these data sets are given in Hartree units.
 
 
-### `PSI4`
+## `PSI4` ##
 
 Given is HF, CCSD, MP2, PPL, REST, and (T) contributions.
 Values are given for AVDZ-AV6Z, as well as the extrapolated values.
@@ -75,7 +73,7 @@ Values are given for AVDZ-AV6Z, as well as the extrapolated values.
 The data is found in the directory
 - `psi4/`
 
-### `TURBOMOLE`
+## `TURBOMOLE` ##
 
 Given is the CCSD and MP2 correlation energy, as well as the total CCSD energy
 including HF.
@@ -92,7 +90,7 @@ In addition, the `PSI4` energies are also provided in these files:
 - `f12tz_gamma1.4/`
 - `f12qz_gamma1.4/`
 
-### `NWCHEM+CC4S`
+## `NWCHEM+CC4S` ##
 
 - HF orbitals are taken from NWCHEM and used for CCSD calculations using the code `cc4s`.
 - The number of natural orbitals per occupied orbital is given in the first column.
