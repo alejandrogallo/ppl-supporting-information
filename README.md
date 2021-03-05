@@ -1,3 +1,18 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Introduction](#introduction)
+- [Overview of the contents](#overview-of-the-contents)
+    - [Molecular geometries](#molecular-geometries)
+    - [Chemical reactions list](#chemical-reactions-list)
+    - [`PSI4` calculations output](#psi4-calculations-output)
+    - [Calculated energies](#calculated-energies)
+        - [`PSI4`](#psi4)
+        - [`TURBOMOLE`](#turbomole)
+        - [`NWCHEM+CC4S`](#nwchemcc4s)
+
+<!-- markdown-toc end -->
+
 # Introduction
 
 This repository contains simulation results of molecular quantum
