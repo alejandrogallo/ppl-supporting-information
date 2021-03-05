@@ -1,0 +1,170 @@
+
+    -----------------------------------------------------------------------
+          Psi4: An Open-Source Ab Initio Electronic Structure Package
+                               Psi4 1.4a3.dev88 
+
+                         Git: Rev {master} 262e345 
+
+
+    D. G. A. Smith, L. A. Burns, A. C. Simmonett, R. M. Parrish,
+    M. C. Schieber, R. Galvelis, P. Kraus, H. Kruse, R. Di Remigio,
+    A. Alenaizan, A. M. James, S. Lehtola, J. P. Misiewicz, M. Scheurer,
+    R. A. Shaw, J. B. Schriber, Y. Xie, Z. L. Glick, D. A. Sirianni,
+    J. S. O'Brien, J. M. Waldrop, A. Kumar, E. G. Hohenstein,
+    B. P. Pritchard, B. R. Brooks, H. F. Schaefer III, A. Yu. Sokolov,
+    K. Patkowski, A. E. DePrince III, U. Bozkaya, R. A. King,
+    F. A. Evangelista, J. M. Turney, T. D. Crawford, C. D. Sherrill,
+    J. Chem. Phys. 152(18) 184108 (2020). https://doi.org/10.1063/5.0006002
+
+                            Additional Code Authors
+    E. T. Seidl, C. L. Janssen, E. F. Valeev, M. L. Leininger,
+    J. F. Gonthier, R. M. Richard, H. R. McAlexander, M. Saitow, X. Wang,
+    P. Verma, and M. H. Lechner
+
+             Previous Authors, Complete List of Code Contributors,
+                       and Citations for Specific Modules
+    https://github.com/psi4/psi4/blob/master/codemeta.json
+    https://github.com/psi4/psi4/graphs/contributors
+    http://psicode.org/psi4manual/master/introduction.html#citing-psifour
+
+    -----------------------------------------------------------------------
+
+
+    Psi4 started on: Saturday, 30 January 2021 02:56PM
+
+    Process ID: 194137
+    Host:       n411-035.vsc4.prov
+    PSIDATADIR: /home/fs71337/gallo4/psi4/eri-6/psi4/build/stage/share/psi4
+    Memory:     500.0 MiB
+    Threads:    1
+    
+  ==> Input File <==
+
+--------------------------------------------------------------------------
+# Any line starting with the # character is a comment line
+memory 650000 mb
+molecule molecule{
+0 1
+C         -0.0131849130        0.0000000000       -0.7300158634
+O          0.0640939097        0.0000000000        0.6915053898
+H         -0.5186806976       -0.8893140541       -1.1100627930
+H         -0.5186806976        0.8893140541       -1.1100627930
+H          1.0094357309        0.0000000000       -1.0953577182
+H         -0.8323439031        0.0000000000        1.0381148124
+}
+
+set {
+  reference rhf
+  basis aug-cc-pV(6+d)Z
+  scf_type OUT_OF_CORE
+  freeze_core true
+}
+
+energy('ccsd(t)')
+--------------------------------------------------------------------------
+
+  Memory set to 605.360 GiB by Python driver.
+
+Scratch directory: /binfl/lv71337/airmler/temp/
+
+*** tstart() called on n411-035.vsc4.prov
+*** at Sat Jan 30 14:56:04 2021
+
+   => Loading Basis Set <=
+
+    Name: AUG-CC-PV(6+D)Z
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1   entry C          line   267 file /home/fs71337/gallo4/psi4/eri-6/psi4/build/stage/share/psi4/basis/aug-cc-pv_6pd_z.gbs 
+    atoms 2   entry O          line   459 file /home/fs71337/gallo4/psi4/eri-6/psi4/build/stage/share/psi4/basis/aug-cc-pv_6pd_z.gbs 
+    atoms 3-6 entry H          line    51 file /home/fs71337/gallo4/psi4/eri-6/psi4/build/stage/share/psi4/basis/aug-cc-pv_6pd_z.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
+                              RHF Reference
+                        1 Threads, 619888 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: cs
+    Full point group: Cs
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 1:
+
+       Center              X                  Y                   Z               Mass       
+    ------------   -----------------  -----------------  -----------------  -----------------
+         C            0.013183553264    -0.730177928584     0.000000000000    12.000000000000
+         O           -0.064095269436     0.691343324616     0.000000000000    15.994914619570
+         H            0.518679337864    -1.110224858184    -0.889314054100     1.007825032230
+         H            0.518679337864    -1.110224858184     0.889314054100     1.007825032230
+         H           -1.009437090636    -1.095519783384     0.000000000000     1.007825032230
+         H            0.832342543364     1.037952747216     0.000000000000     1.007825032230
+
+  Running in cs symmetry.
+
+  Rotational constants: A =      4.29018  B =      0.82568  C =      0.79676 [cm^-1]
+  Rotational constants: A = 128616.40570  B =  24753.17753  C =  23886.16691 [MHz]
+  Nuclear repulsion =   40.295712738859962
+
+  Charge       = 0
+  Multiplicity = 1
+  Electrons    = 18
+  Nalpha       = 9
+  Nbeta        = 9
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is OUT_OF_CORE.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is SAD.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 1.00e-12
+
+  ==> Primary Basis <==
+
+  Basis Set: AUG-CC-PV(6+D)Z
+    Blend: AUG-CC-PV(6+D)Z
+    Number of shells: 178
+    Number of basis function: 886
+    Number of Cartesian functions: 1316
+    Spherical Harmonics?: true
+    Max angular momentum: 6
+
+  ==> Integral Setup <==
+
+  ==> DiskJK: Disk-Based J/K Matrices <==
+
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    Memory [MiB]:           464916
+    Schwarz Cutoff:          1E-12
+
+  Minimum eigenvalue in the overlap matrix is 2.6857991270E-07.
+  Reciprocal condition number of the overlap matrix is 1.8336958390E-08.
+    Using symmetric orthogonalization.
+
+  ==> Pre-Iterations <==
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF (no occupation information).
+
+   -------------------------
+    Irrep   Nso     Nmo    
+   -------------------------
+     A'       505     505 
+     A"       381     381 
+   -------------------------
+    Total     886     886
+   -------------------------
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     RMS |[F,P]|
+

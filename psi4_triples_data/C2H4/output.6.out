@@ -1,0 +1,790 @@
+
+    -----------------------------------------------------------------------
+          Psi4: An Open-Source Ab Initio Electronic Structure Package
+                               Psi4 1.4a3.dev88 
+
+                         Git: Rev {master} 262e345 
+
+
+    D. G. A. Smith, L. A. Burns, A. C. Simmonett, R. M. Parrish,
+    M. C. Schieber, R. Galvelis, P. Kraus, H. Kruse, R. Di Remigio,
+    A. Alenaizan, A. M. James, S. Lehtola, J. P. Misiewicz, M. Scheurer,
+    R. A. Shaw, J. B. Schriber, Y. Xie, Z. L. Glick, D. A. Sirianni,
+    J. S. O'Brien, J. M. Waldrop, A. Kumar, E. G. Hohenstein,
+    B. P. Pritchard, B. R. Brooks, H. F. Schaefer III, A. Yu. Sokolov,
+    K. Patkowski, A. E. DePrince III, U. Bozkaya, R. A. King,
+    F. A. Evangelista, J. M. Turney, T. D. Crawford, C. D. Sherrill,
+    J. Chem. Phys. 152(18) 184108 (2020). https://doi.org/10.1063/5.0006002
+
+                            Additional Code Authors
+    E. T. Seidl, C. L. Janssen, E. F. Valeev, M. L. Leininger,
+    J. F. Gonthier, R. M. Richard, H. R. McAlexander, M. Saitow, X. Wang,
+    P. Verma, and M. H. Lechner
+
+             Previous Authors, Complete List of Code Contributors,
+                       and Citations for Specific Modules
+    https://github.com/psi4/psi4/blob/master/codemeta.json
+    https://github.com/psi4/psi4/graphs/contributors
+    http://psicode.org/psi4manual/master/introduction.html#citing-psifour
+
+    -----------------------------------------------------------------------
+
+
+    Psi4 started on: Tuesday, 26 January 2021 11:57PM
+
+    Process ID: 7598
+    Host:       n412-047.vsc4.prov
+    PSIDATADIR: /home/fs71337/gallo4/psi4/eri-6/psi4/build/stage/share/psi4
+    Memory:     500.0 MiB
+    Threads:    48
+    
+  ==> Input File <==
+
+--------------------------------------------------------------------------
+# Any line starting with the # character is a comment line
+memory 250000 mb
+molecule molecule{
+0 1
+C          0.0000000000        0.0000000000        0.6665882445
+C          0.0000000000        0.0000000000       -0.6665882445
+H          0.0000000000        0.9233992299        1.2285968100
+H          0.0000000000       -0.9233992299        1.2285968100
+H          0.0000000000        0.9233992299       -1.2285968100
+H          0.0000000000       -0.9233992299       -1.2285968100
+}
+
+set {
+  reference rhf
+  basis aug-cc-pV(6+d)Z
+  scf_type OUT_OF_CORE
+  freeze_core true
+}
+
+energy('ccsd(t)')
+--------------------------------------------------------------------------
+
+  Memory set to 232.831 GiB by Python driver.
+
+Scratch directory: /binfl/lv71337/airmler/temp/
+
+*** tstart() called on n412-047.vsc4.prov
+*** at Tue Jan 26 23:57:19 2021
+
+   => Loading Basis Set <=
+
+    Name: AUG-CC-PV(6+D)Z
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1-2 entry C          line   267 file /home/fs71337/gallo4/psi4/eri-6/psi4/build/stage/share/psi4/basis/aug-cc-pv_6pd_z.gbs 
+    atoms 3-6 entry H          line    51 file /home/fs71337/gallo4/psi4/eri-6/psi4/build/stage/share/psi4/basis/aug-cc-pv_6pd_z.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
+                              RHF Reference
+                       48 Threads, 238418 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: d2h
+    Full point group: D2h
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 1:
+
+       Center              X                  Y                   Z               Mass       
+    ------------   -----------------  -----------------  -----------------  -----------------
+         C           -0.000000000000     0.000000000000     0.666588244500    12.000000000000
+         C           -0.000000000000     0.000000000000    -0.666588244500    12.000000000000
+         H           -0.000000000000     0.923399229900     1.228596810000     1.007825032230
+         H            0.000000000000    -0.923399229900     1.228596810000     1.007825032230
+         H           -0.000000000000     0.923399229900    -1.228596810000     1.007825032230
+         H            0.000000000000    -0.923399229900    -1.228596810000     1.007825032230
+
+  Running in d2h symmetry.
+
+  Rotational constants: A =      4.90425  B =      1.00647  C =      0.83509 [cm^-1]
+  Rotational constants: A = 147025.63062  B =  30173.31544  C =  25035.42391 [MHz]
+  Nuclear repulsion =   33.410684914907506
+
+  Charge       = 0
+  Multiplicity = 1
+  Electrons    = 16
+  Nalpha       = 8
+  Nbeta        = 8
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is OUT_OF_CORE.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is SAD.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 1.00e-12
+
+  ==> Primary Basis <==
+
+  Basis Set: AUG-CC-PV(6+D)Z
+    Blend: AUG-CC-PV(6+D)Z
+    Number of shells: 178
+    Number of basis function: 886
+    Number of Cartesian functions: 1316
+    Spherical Harmonics?: true
+    Max angular momentum: 6
+
+  ==> Integral Setup <==
+
+  ==> DiskJK: Disk-Based J/K Matrices <==
+
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    Memory [MiB]:           178813
+    Schwarz Cutoff:          1E-12
+
+  Minimum eigenvalue in the overlap matrix is 1.6763947746E-07.
+  Reciprocal condition number of the overlap matrix is 1.3034766504E-08.
+    Using symmetric orthogonalization.
+
+  ==> Pre-Iterations <==
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF (no occupation information).
+
+
+ WARNING: Atomic UHF is not converging! Try casting from a smaller basis or call Rob at CCMST.
+
+ WARNING: Atomic UHF is not converging! Try casting from a smaller basis or call Rob at CCMST.
+   -------------------------
+    Irrep   Nso     Nmo    
+   -------------------------
+     Ag       143     143 
+     B1g       81      81 
+     B2g       96      96 
+     B3g      123     123 
+     Au        81      81 
+     B1u      143     143 
+     B2u      123     123 
+     B3u       96      96 
+   -------------------------
+    Total     886     886
+   -------------------------
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     RMS |[F,P]|
+
+   @RHF iter SAD:   -16.12578311178277   -1.61258e+01   0.00000e+00 
+    Occupation by irrep:
+             Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
+    DOCC [     3,    0,    0,    1,    0,    3,    1,    0 ]
+
+   @RHF iter   1:   -74.39107285516310   -5.82653e+01   9.51705e-03 DIIS
+    Occupation by irrep:
+             Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
+    DOCC [     3,    0,    0,    1,    0,    2,    1,    1 ]
+
+   @RHF iter   2:   -72.58012952509389    1.81094e+00   5.77568e-03 DIIS
+   @RHF iter   3:   -77.48588101623449   -4.90575e+00   3.33407e-03 DIIS
+   @RHF iter   4:   -77.98942142129413   -5.03540e-01   1.13290e-03 DIIS
+   @RHF iter   5:   -78.06822490558987   -7.88035e-02   1.74808e-04 DIIS
+   @RHF iter   6:   -78.07059311544930   -2.36821e-03   1.49492e-05 DIIS
+   @RHF iter   7:   -78.07063323111998   -4.01157e-05   5.35695e-06 DIIS
+   @RHF iter   8:   -78.07063631448904   -3.08337e-06   1.21153e-06 DIIS
+   @RHF iter   9:   -78.07063644889794   -1.34409e-07   6.25427e-08 DIIS
+   @RHF iter  10:   -78.07063644936666   -4.68717e-10   5.42598e-09 DIIS
+  Energy and wave function converged.
+
+
+  ==> Post-Iterations <==
+
+    Orbital Energies [Eh]
+    ---------------------
+
+    Doubly Occupied:                                                      
+
+       1Ag   -11.230182     1B1u  -11.228463     2Ag    -1.034163  
+       2B1u   -0.793391     1B2u   -0.644964     3Ag    -0.587777  
+       1B3g   -0.508942     1B3u   -0.377194  
+
+    Virtual:                                                              
+
+       4Ag     0.022453     3B1u    0.028046     2B2u    0.029075  
+       2B3g    0.040889     2B3u    0.055012     1B2g    0.066634  
+       5Ag     0.067827     4B1u    0.077944     3B2u    0.093582  
+       6Ag     0.097752     3B3g    0.109339     7Ag     0.127099  
+       5B1u    0.127973     2B2g    0.137510     1B1g    0.145565  
+       6B1u    0.153357     4B2u    0.155265     1Au     0.185265  
+       8Ag     0.189368     3B3u    0.192806     5B2u    0.201141  
+       4B3g    0.205941     7B1u    0.208375     4B3u    0.227831  
+       6B2u    0.237119     9Ag     0.239120     5B3u    0.239888  
+       5B3g    0.241679     3B2g    0.249037     4B2g    0.260627  
+      10Ag     0.267356    11Ag     0.274530     6B3g    0.275364  
+       8B1u    0.278056     2B1g    0.287810     7B2u    0.296884  
+       9B1u    0.315536    12Ag     0.316668     5B2g    0.319736  
+      10B1u    0.323791     2Au     0.344738    11B1u    0.346172  
+       8B2u    0.346352    13Ag     0.372434     7B3g    0.378882  
+       3B1g    0.405246     9B2u    0.411378     8B3g    0.417536  
+      12B1u    0.429035    14Ag     0.445718     3Au     0.451995  
+       6B3u    0.464919    10B2u    0.465745     4B1g    0.492425  
+       7B3u    0.511797    13B1u    0.512746    15Ag     0.517039  
+      11B2u    0.520868     6B2g    0.527723     9B3g    0.530849  
+      12B2u    0.551285    14B1u    0.557056     8B3u    0.558448  
+       4Au     0.562529    16Ag     0.563147    15B1u    0.568142  
+      17Ag     0.576971     7B2g    0.578479    10B3g    0.586330  
+      11B3g    0.595516     9B3u    0.625121     5B1g    0.634376  
+      18Ag     0.649389    13B2u    0.654193    16B1u    0.659053  
+       8B2g    0.660718    19Ag     0.668127    12B3g    0.673485  
+       5Au     0.684367    17B1u    0.688419    10B3u    0.701198  
+      14B2u    0.720430    18B1u    0.738664    20Ag     0.760774  
+       9B2g    0.766066     6B1g    0.767328    11B3u    0.778610  
+      13B3g    0.778661    15B2u    0.779804    21Ag     0.793663  
+      10B2g    0.798880    19B1u    0.814633    14B3g    0.830014  
+      20B1u    0.869298     6Au     0.878276     7B1g    0.904371  
+      16B2u    0.918450    15B3g    0.925710    22Ag     0.954225  
+      12B3u    0.959889    23Ag     0.966655    21B1u    0.969859  
+      17B2u    0.987710    11B2g    0.996702    16B3g    1.008375  
+      18B2u    1.057155    12B2g    1.064146    22B1u    1.065345  
+      24Ag     1.066452     8B1g    1.097321    17B3g    1.101883  
+      25Ag     1.102642    19B2u    1.111949     7Au     1.122626  
+       9B1g    1.129416    13B3u    1.138020    23B1u    1.161102  
+       8Au     1.172936    24B1u    1.191184    26Ag     1.191375  
+      13B2g    1.195729    14B3u    1.196556    20B2u    1.236621  
+      25B1u    1.249187    27Ag     1.262465    28Ag     1.270451  
+      18B3g    1.274893     9Au     1.279662    15B3u    1.281493  
+      26B1u    1.297383    10B1g    1.311884    16B3u    1.326210  
+      21B2u    1.332564    14B2g    1.334704    19B3g    1.342568  
+      29Ag     1.374709    22B2u    1.395403    20B3g    1.395604  
+      11B1g    1.398565    23B2u    1.412094    15B2g    1.413344  
+      10Au     1.416409    21B3g    1.435246    27B1u    1.436613  
+      28B1u    1.456633    30Ag     1.459780    17B3u    1.484374  
+      31Ag     1.499770    22B3g    1.505902    29B1u    1.505905  
+      24B2u    1.569654    11Au     1.579417    12B1g    1.580080  
+      16B2g    1.583692    18B3u    1.603743    23B3g    1.632351  
+      30B1u    1.644301    25B2u    1.659641    31B1u    1.676883  
+      32Ag     1.679013    17B2g    1.706478    13B1g    1.707926  
+      33Ag     1.709195    19B3u    1.712745    26B2u    1.724688  
+      12Au     1.729130    32B1u    1.736856    34Ag     1.764385  
+      24B3g    1.770676    27B2u    1.839710    25B3g    1.847238  
+      18B2g    1.854526    33B1u    1.857910    20B3u    1.860122  
+      13Au     1.871541    35Ag     1.903092    26B3g    1.924349  
+      19B2g    1.952059    36Ag     1.953962    14B1g    2.026651  
+      21B3u    2.041506    37Ag     2.045117    34B1u    2.045958  
+      28B2u    2.046212    20B2g    2.086632    35B1u    2.106285  
+      27B3g    2.151969    22B3u    2.169479    36B1u    2.178535  
+      29B2u    2.194141    15B1g    2.197883    28B3g    2.267635  
+      38Ag     2.278069    14Au     2.278255    30B2u    2.286107  
+      16B1g    2.314256    29B3g    2.317297    37B1u    2.319676  
+      15Au     2.328015    39Ag     2.366657    21B2g    2.372804  
+      31B2u    2.389777    23B3u    2.405492    30B3g    2.412886  
+      17B1g    2.418457    40Ag     2.435092    24B3u    2.454012  
+      22B2g    2.478992    38B1u    2.485280    41Ag     2.496008  
+      32B2u    2.514988    23B2g    2.525100    18B1g    2.535850  
+      33B2u    2.540356    16Au     2.558752    25B3u    2.567586  
+      42Ag     2.569584    31B3g    2.589714    39B1u    2.591684  
+      19B1g    2.626124    34B2u    2.627286    24B2g    2.649192  
+      17Au     2.649867    40B1u    2.652402    32B3g    2.656996  
+      43Ag     2.671151    20B1g    2.671965    26B3u    2.677830  
+      44Ag     2.706866    25B2g    2.725647    41B1u    2.726389  
+      18Au     2.735139    42B1u    2.738696    35B2u    2.746986  
+      45Ag     2.771031    26B2g    2.777532    33B3g    2.794721  
+      27B3u    2.797395    43B1u    2.818971    36B2u    2.819637  
+      28B3u    2.826827    46Ag     2.832708    44B1u    2.835158  
+      19Au     2.852217    34B3g    2.879280    21B1g    2.895558  
+      47Ag     2.912111    27B2g    2.918976    37B2u    2.940114  
+      35B3g    2.965583    29B3u    2.973991    45B1u    2.976587  
+      38B2u    2.989100    20Au     2.991036    21Au     3.053607  
+      36B3g    3.071063    46B1u    3.101829    48Ag     3.121834  
+      37B3g    3.122051    39B2u    3.128207    28B2g    3.129672  
+      40B2u    3.142023    30B3u    3.162907    49Ag     3.220798  
+      22B1g    3.228533    50Ag     3.284289    38B3g    3.289493  
+      47B1u    3.304389    22Au     3.309257    31B3u    3.310391  
+      23B1g    3.348439    41B2u    3.350101    48B1u    3.364645  
+      51Ag     3.366662    39B3g    3.387994    29B2g    3.388502  
+      52Ag     3.428843    30B2g    3.435612    49B1u    3.443124  
+      40B3g    3.473762    32B3u    3.540934    33B3u    3.555391  
+      24B1g    3.588275    50B1u    3.626958    42B2u    3.641559  
+      51B1u    3.646674    41B3g    3.693412    53Ag     3.695192  
+      43B2u    3.728111    44B2u    3.750532    52B1u    3.751633  
+      54Ag     3.781127    31B2g    3.782864    23Au     3.802662  
+      42B3g    3.812729    25B1g    3.825057    32B2g    3.849342  
+      34B3u    3.878741    45B2u    3.962564    55Ag     3.966175  
+      43B3g    3.970889    24Au     4.029938    33B2g    4.048043  
+      35B3u    4.073727    26B1g    4.076503    46B2u    4.093514  
+      34B2g    4.124001    56Ag     4.151314    53B1u    4.158191  
+      25Au     4.168259    57Ag     4.234919    27B1g    4.253636  
+      36B3u    4.260949    26Au     4.262049    44B3g    4.303475  
+      54B1u    4.335752    55B1u    4.373712    35B2g    4.415459  
+      58Ag     4.427445    56B1u    4.445644    47B2u    4.460356  
+      37B3u    4.497684    45B3g    4.500548    46B3g    4.525482  
+      57B1u    4.527551    28B1g    4.559915    48B2u    4.642849  
+      27Au     4.653331    47B3g    4.657364    58B1u    4.664183  
+      59Ag     4.668216    29B1g    4.711081    36B2g    4.767680  
+      60Ag     4.782068    49B2u    4.816572    59B1u    4.858166  
+      61Ag     4.882904    30B1g    4.892025    62Ag     4.899564  
+      28Au     4.924576    38B3u    4.938618    37B2g    4.949942  
+      48B3g    4.967245    60B1u    5.007317    49B3g    5.007933  
+      39B3u    5.023525    40B3u    5.062487    38B2g    5.063280  
+      50B2u    5.072978    63Ag     5.084854    31B1g    5.091081  
+      64Ag     5.104208    51B2u    5.109356    50B3g    5.160628  
+      39B2g    5.178626    29Au     5.198640    41B3u    5.210321  
+      52B2u    5.212326    65Ag     5.222045    61B1u    5.252326  
+      42B3u    5.259445    62B1u    5.281151    32B1g    5.287708  
+      30Au     5.288616    66Ag     5.293194    40B2g    5.297053  
+      33B1g    5.310282    53B2u    5.315728    31Au     5.342339  
+      67Ag     5.382987    63B1u    5.388193    54B2u    5.403149  
+      41B2g    5.413868    51B3g    5.418561    52B3g    5.441682  
+      32Au     5.446556    34B1g    5.449662    64B1u    5.459001  
+      55B2u    5.476434    43B3u    5.488323    56B2u    5.493588  
+      42B2g    5.495204    53B3g    5.511535    65B1u    5.543934  
+      44B3u    5.552242    68Ag     5.597711    45B3u    5.615525  
+      54B3g    5.629888    55B3g    5.654272    33Au     5.662141  
+      35B1g    5.673702    69Ag     5.675428    66B1u    5.708785  
+      57B2u    5.723007    43B2g    5.771506    56B3g    5.772335  
+      58B2u    5.775624    67B1u    5.779622    44B2g    5.829712  
+      34Au     5.842964    68B1u    5.860080    70Ag     5.869238  
+      35Au     5.895452    59B2u    5.922453    71Ag     5.945649  
+      36B1g    5.968908    69B1u    5.976035    46B3u    5.983293  
+      45B2g    6.004952    72Ag     6.025396    57B3g    6.040330  
+      60B2u    6.066985    58B3g    6.117819    37B1g    6.122545  
+      47B3u    6.133026    36Au     6.145695    70B1u    6.169051  
+      61B2u    6.199567    46B2g    6.217760    48B3u    6.247396  
+      73Ag     6.269433    38B1g    6.283920    74Ag     6.290730  
+      59B3g    6.331728    62B2u    6.375534    37Au     6.389415  
+      71B1u    6.411307    47B2g    6.463645    75Ag     6.480951  
+      60B3g    6.483256    48B2g    6.575057    49B3u    6.575188  
+      39B1g    6.578355    50B3u    6.599971    72B1u    6.602417  
+      63B2u    6.629546    76Ag     6.634205    73B1u    6.641696  
+      61B3g    6.672100    51B3u    6.708726    74B1u    6.763562  
+      38Au     6.809241    62B3g    6.839745    40B1g    6.844985  
+      77Ag     6.859145    78Ag     6.904038    49B2g    6.911303  
+      64B2u    6.934044    75B1u    6.977627    52B3u    6.980815  
+      63B3g    6.997810    41B1g    7.038802    39Au     7.051875  
+      65B2u    7.062086    50B2g    7.081936    53B3u    7.129419  
+      76B1u    7.156207    79Ag     7.206728    66B2u    7.213394  
+      77B1u    7.250663    64B3g    7.256134    51B2g    7.402358  
+      42B1g    7.472422    80Ag     7.479596    40Au     7.488748  
+      78B1u    7.498743    67B2u    7.553829    81Ag     7.587829  
+      41Au     7.606361    68B2u    7.628386    65B3g    7.669823  
+      54B3u    7.674946    82Ag     7.690824    79B1u    7.719860  
+      43B1g    7.729772    69B2u    7.868642    52B2g    7.878228  
+      66B3g    7.894809    80B1u    7.927405    70B2u    7.929469  
+      83Ag     7.939202    44B1g    7.970547    55B3u    8.091116  
+      67B3g    8.102049    42Au     8.159271    81B1u    8.257301  
+      53B2g    8.264824    45B1g    8.330542    71B2u    8.345189  
+      68B3g    8.350262    43Au     8.394725    56B3u    8.394890  
+      69B3g    8.411827    84Ag     8.431529    54B2g    8.497877  
+      57B3u    8.560890    82B1u    8.567263    85Ag     8.577919  
+      70B3g    8.619520    86Ag     8.632586    72B2u    8.646170  
+      83B1u    8.647527    55B2g    8.647779    44Au     8.717693  
+      56B2g    8.750954    84B1u    8.859329    87Ag     8.916491  
+      85B1u    8.964940    73B2u    8.968861    45Au     8.979563  
+      71B3g    8.980905    88Ag     9.039018    58B3u    9.083748  
+      46B1g    9.087374    72B3g    9.108631    57B2g    9.354211  
+      46Au     9.410062    47B1g    9.478871    86B1u    9.495410  
+      59B3u    9.506323    89Ag     9.519693    74B2u    9.526415  
+      58B2g    9.559541    87B1u    9.565915    73B3g    9.648601  
+      47Au     9.736608    59B2g    9.745234    75B2u    9.813763  
+      74B3g    9.829972    88B1u    9.881875    90Ag     9.960087  
+      48B1g    9.976802    89B1u    9.978900    91Ag    10.004201  
+      60B3u   10.040228    60B2g   10.108125    61B3u   10.147577  
+      75B3g   10.147613    76B3g   10.222382    76B2u   10.306432  
+      61B2g   10.307706    92Ag    10.331403    77B2u   10.388816  
+      90B1u   10.415690    93Ag    10.420281    48Au    10.448030  
+      49B1g   10.456887    94Ag    10.480741    50B1g   10.497691  
+      78B2u   10.513118    77B3g   10.522252    91B1u   10.526021  
+      62B3u   10.556059    49Au    10.610607    95Ag    10.637106  
+      62B2g   10.641866    63B3u   10.669009    51B1g   10.675206  
+      79B2u   10.685009    78B3g   10.745511    92B1u   10.802769  
+      50Au    10.810674    80B2u   10.850660    96Ag    10.855420  
+      64B3u   10.862397    52B1g   10.878724    97Ag    10.912301  
+      93B1u   10.919538    51Au    10.946392    79B3g   10.950253  
+      94B1u   10.974924    81B2u   11.101071    95B1u   11.127231  
+      53B1g   11.188648    63B2g   11.197415    96B1u   11.222464  
+      82B2u   11.242584    80B3g   11.326003    81B3g   11.393040  
+      97B1u   11.429287    98Ag    11.456492    64B2g   11.456718  
+      65B3u   11.484028    52Au    11.503673    83B2u   11.515051  
+      82B3g   11.537191    53Au    11.663001    65B2g   11.744648  
+      66B3u   11.781745    99Ag    11.864547    54B1g   11.915437  
+      54Au    11.931953    98B1u   12.096135    67B3u   12.129143  
+     100Ag    12.173811    84B2u   12.194560    55B1g   12.205675  
+      83B3g   12.277645    66B2g   12.324749    68B3u   12.349882  
+     101Ag    12.403847    85B2u   12.425302    84B3g   12.457710  
+      56B1g   12.460838    99B1u   12.497447    86B2u   12.511491  
+      55Au    12.604062   102Ag    12.728193    67B2g   12.771945  
+      85B3g   12.857574    87B2u   12.884872    68B2g   12.942956  
+     100B1u   13.003734    69B3u   13.010230   103Ag    13.118385  
+      86B3g   13.160147    88B2u   13.183208   101B1u   13.232982  
+     104Ag    13.254987    57B1g   13.297098   105Ag    13.384576  
+      89B2u   13.474683    56Au    13.521831    70B3u   13.571091  
+      87B3g   13.577821   102B1u   13.659691    58B1g   13.692172  
+      69B2g   13.721852   106Ag    13.723741   103B1u   13.771321  
+      71B3u   13.842546    57Au    13.890495   104B1u   13.990352  
+      88B3g   14.130489   105B1u   14.312919    59B1g   14.333779  
+      58Au    14.344445    90B2u   14.348953    89B3g   14.394631  
+      72B3u   14.472787    70B2g   14.510340    73B3u   14.640542  
+      71B2g   14.770319   107Ag    14.794971   106B1u   14.844285  
+      74B3u   14.867070    90B3g   14.956609    91B2u   15.024446  
+      60B1g   15.041076    92B2u   15.116437    61B1g   15.160184  
+     107B1u   15.165788    59Au    15.181256   108Ag    15.224088  
+      72B2g   15.236418    91B3g   15.436675    93B2u   15.464365  
+     109Ag    15.540034    75B3u   15.543730    73B2g   15.556872  
+      60Au    15.649715    61Au    15.753341   108B1u   15.755612  
+      74B2g   15.816229   110Ag    15.830725    92B3g   15.943123  
+     111Ag    16.017656    62B1g   16.054342   109B1u   16.101367  
+      76B3u   16.135428    94B2u   16.175646   110B1u   16.195490  
+      75B2g   16.230581    93B3g   16.242527   112Ag    16.309441  
+      95B2u   16.367331    76B2g   16.559155   113Ag    16.602200  
+      94B3g   16.614182    62Au    16.910849    77B3u   16.918953  
+     111B1u   16.946584    95B3g   16.948759    96B2u   17.050786  
+      63B1g   17.124416    96B3g   17.267411   112B1u   17.277932  
+      78B3u   17.298547   114Ag    17.518112    79B3u   17.597693  
+      77B2g   17.608074    64B1g   17.632194    78B2g   17.637589  
+     113B1u   17.646485   115Ag    17.653317    97B2u   17.686427  
+      98B2u   17.715831    63Au    17.767574   114B1u   17.807943  
+      79B2g   17.816883    97B3g   17.868041   116Ag    17.883163  
+      64Au    17.931490    98B3g   17.991657   115B1u   18.215456  
+     117Ag    18.222811    80B3u   18.288921    65Au    18.303431  
+     116B1u   18.339240    99B2u   18.348535   118Ag    18.372644  
+     119Ag    18.398273    80B2g   18.478283    65B1g   18.483434  
+      99B3g   18.589538   100B2u   18.621028    66B1g   18.715500  
+     101B2u   18.775391   117B1u   18.822127    81B3u   18.898821  
+      82B3u   18.937162    66Au    18.955963    67B1g   19.018521  
+     100B3g   19.047513   118B1u   19.100968   102B2u   19.476120  
+      81B2g   19.570060   101B3g   19.640506    83B3u   19.672274  
+     120Ag    19.739668    82B2g   19.782967   119B1u   19.900347  
+     121Ag    19.926118    67Au    19.947558   102B3g   20.005953  
+     120B1u   20.228356   122Ag    20.325335    68B1g   20.404627  
+     103B2u   20.478558    83B2g   20.525306    69B1g   20.613060  
+     121B1u   20.692747    68Au    20.733065   104B2u   20.742281  
+     103B3g   20.769874   123Ag    20.808297   105B2u   20.817665  
+      70B1g   20.936909    84B3u   20.940124   122B1u   20.977077  
+      85B3u   20.980805   124Ag    21.002114    69Au    21.027666  
+     104B3g   21.034591   123B1u   21.102118   106B2u   21.124140  
+      84B2g   21.140613    70Au    21.148404   105B3g   21.168237  
+      71B1g   21.194646   124B1u   21.324676   125Ag    21.623145  
+      86B3u   21.832020   106B3g   21.902709   107B2u   21.908413  
+      71Au    21.934740   126Ag    21.955753    87B3u   21.962241  
+      85B2g   21.981598    72B1g   22.015205    86B2g   22.054546  
+     108B2u   22.079037    87B2g   22.129613    73B1g   22.146491  
+     127Ag    22.159064   107B3g   22.163666   109B2u   22.213597  
+     125B1u   22.274018    72Au    22.281758    88B3u   22.344412  
+     108B3g   22.357848   110B2u   22.415233   128Ag    22.509085  
+      89B3u   22.537943   126B1u   22.552298   109B3g   22.554077  
+      73Au    22.563429   129Ag    22.601841    90B3u   22.747660  
+     127B1u   22.768258    88B2g   22.844021   111B2u   22.931315  
+      74B1g   22.936664   110B3g   23.026704   128B1u   23.051016  
+     130Ag    23.059271    89B2g   23.109143    74Au    23.155451  
+      75B1g   23.157654    75Au    23.245346   129B1u   23.441274  
+     111B3g   23.685334   112B2u   23.693197   130B1u   23.729484  
+     131Ag    23.759523    90B2g   23.911513   113B2u   24.246455  
+      91B3u   24.266247   112B3g   24.313415   132Ag    24.344551  
+     131B1u   24.481650   133Ag    24.511678    76B1g   24.513427  
+     114B2u   24.533426    92B3u   24.551727    76Au    24.640484  
+      91B2g   24.651701   113B3g   24.671387    77B1g   24.725755  
+     134Ag    24.769509   132B1u   24.800583   115B2u   24.884852  
+     114B3g   24.892656    92B2g   24.917023    77Au    24.950073  
+     116B2u   25.299730   133B1u   25.354142   135Ag    25.363357  
+     115B3g   25.553840   134B1u   25.628143   116B3g   25.770203  
+      78B1g   25.792353    93B3u   25.861412    79B1g   26.064350  
+     135B1u   26.147053    93B2g   26.185750    78Au    26.259962  
+      94B3u   26.269136   117B2u   26.274835   136Ag    26.301183  
+      94B2g   26.527328    79Au    26.638827   136B1u   26.735724  
+     117B3g   27.252533   137Ag    27.312736    95B3u   27.437468  
+     118B2u   27.459036    80B1g   27.633649   119B2u   27.765617  
+      95B2g   27.813983   137B1u   27.857539   138Ag    27.861458  
+     118B3g   27.898197    80Au    28.056940   120B2u   28.154050  
+     119B3g   28.214192   139Ag    28.231423   121B2u   28.632068  
+     138B1u   28.656146   140Ag    28.712814   120B3g   28.776612  
+     139B1u   28.924358   121B3g   29.402780   140B1u   29.501051  
+      96B3u   36.557632    96B2g   36.707669    81B1g   36.725500  
+      81Au    36.863758   141Ag    37.203166   141B1u   37.578955  
+     122B2u   38.258117   122B3g   38.381666   142Ag    39.296420  
+     142B1u   39.782945   123B2u   40.045629   123B3g   40.296633  
+     143Ag    65.366960   143B1u   65.723556  
+
+    Final Occupation by Irrep:
+             Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
+    DOCC [     3,    0,    0,    1,    0,    2,    1,    1 ]
+
+  @RHF Final Energy:   -78.07063644936666
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =             33.4106849149075060
+    One-Electron Energy =                -170.1524878925281996
+    Two-Electron Energy =                  58.6711665282540338
+    Total Energy =                        -78.0706364493666598
+
+Computation Completed
+
+
+Properties will be evaluated at   0.000000,   0.000000,   0.000000 [a0]
+
+Properties computed using the SCF density matrix
+
+  Nuclear Dipole Moment: [e a0]
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Electronic Dipole Moment: [e a0]
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Dipole Moment: [e a0]
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+  Dipole Moment: [D]
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+
+*** tstop() called on n412-047.vsc4.prov at Wed Jan 27 03:34:16 2021
+Module time:
+	user time   =    6386.58 seconds =     106.44 minutes
+	system time =    3210.49 seconds =      53.51 minutes
+	total time  =      13017 seconds =     216.95 minutes
+Total time:
+	user time   =    6386.58 seconds =     106.44 minutes
+	system time =    3210.49 seconds =      53.51 minutes
+	total time  =      13017 seconds =     216.95 minutes
+
+*** tstart() called on n412-047.vsc4.prov
+*** at Wed Jan 27 03:34:16 2021
+
+
+	Wfn Parameters:
+	--------------------
+	Wavefunction         = CCSD_T
+	Number of irreps     = 8
+	Number of MOs        = 886
+	Number of active MOs = 884
+	AO-Basis             = NONE
+	Semicanonical        = false
+	Reference            = RHF
+	Print Level          = 1
+
+	IRREP	# MOs	# FZDC	# DOCC	# SOCC	# VIRT	# FZVR
+	-----	-----	------	------	------	------	------
+	 Ag	   143	    1	    2	    0	    140	    0
+	 B1g	   81	    0	    0	    0	    81	    0
+	 B2g	   96	    0	    0	    0	    96	    0
+	 B3g	   123	    0	    1	    0	    122	    0
+	 Au	   81	    0	    0	    0	    81	    0
+	 B1u	   143	    1	    1	    0	    141	    0
+	 B2u	   123	    0	    1	    0	    122	    0
+	 B3u	   96	    0	    1	    0	    95	    0
+	Transforming integrals...
+	IWL integrals will be deleted.
+	(OO|OO)...
+	Presorting SO-basis two-electron integrals.
+	Sorting File: SO Ints (nn|nn) nbuckets = 1
+	Constructing frozen core operators
+	Starting first half-transformation.
+	Sorting half-transformed integrals.
+	First half integral transformation complete.
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OO|OV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OO|VV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OV|OO)...
+	Starting first half-transformation.
+	Sorting half-transformed integrals.
+	First half integral transformation complete.
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OV|OV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OV|VV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(VV|OO)...
+	Starting first half-transformation.
+	Sorting half-transformed integrals.
+	First half integral transformation complete.
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(VV|OV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(VV|VV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	Frozen core energy     =    -78.58163277612350
+
+	Size of irrep 0 of <ab|cd> integrals:  10122.775 (MW) /  80982.196 (MB)
+	Size of irrep 1 of <ab|cd> integrals:   8487.200 (MW) /  67897.599 (MB)
+	Size of irrep 2 of <ab|cd> integrals:   8685.867 (MW) /  69486.938 (MB)
+	Size of irrep 3 of <ab|cd> integrals:   9901.444 (MW) /  79211.552 (MB)
+	Size of irrep 4 of <ab|cd> integrals:   8487.200 (MW) /  67897.599 (MB)
+	Size of irrep 5 of <ab|cd> integrals:  10122.372 (MW) /  80978.977 (MB)
+	Size of irrep 6 of <ab|cd> integrals:   9901.444 (MW) /  79211.552 (MB)
+	Size of irrep 7 of <ab|cd> integrals:   8686.240 (MW) /  69489.920 (MB)
+	Total:                                 74394.542 (MW) / 595156.333 (MB)
+
+	Size of irrep 0 of <ia|bc> integrals:     76.465 (MW) /    611.721 (MB)
+	Size of irrep 1 of <ia|bc> integrals:     51.222 (MW) /    409.776 (MB)
+	Size of irrep 2 of <ia|bc> integrals:     54.987 (MW) /    439.895 (MB)
+	Size of irrep 3 of <ia|bc> integrals:     72.440 (MW) /    579.523 (MB)
+	Size of irrep 4 of <ia|bc> integrals:     51.222 (MW) /    409.776 (MB)
+	Size of irrep 5 of <ia|bc> integrals:     76.665 (MW) /    613.319 (MB)
+	Size of irrep 6 of <ia|bc> integrals:     72.440 (MW) /    579.523 (MB)
+	Size of irrep 7 of <ia|bc> integrals:     54.802 (MW) /    438.413 (MB)
+	Total:                                   510.243 (MW) /   4081.946 (MB)
+
+	Size of irrep 0 of tijab amplitudes:       0.805 (MW) /      6.439 (MB)
+	Size of irrep 1 of tijab amplitudes:       0.184 (MW) /      1.474 (MB)
+	Size of irrep 2 of tijab amplitudes:       0.186 (MW) /      1.491 (MB)
+	Size of irrep 3 of tijab amplitudes:       0.597 (MW) /      4.776 (MB)
+	Size of irrep 4 of tijab amplitudes:       0.184 (MW) /      1.474 (MB)
+	Size of irrep 5 of tijab amplitudes:       0.604 (MW) /      4.829 (MB)
+	Size of irrep 6 of tijab amplitudes:       0.597 (MW) /      4.776 (MB)
+	Size of irrep 7 of tijab amplitudes:       0.373 (MW) /      2.982 (MB)
+	Total:                                     3.530 (MW) /     28.243 (MB)
+
+	Nuclear Rep. energy          =     33.41068491490751
+	SCF energy                   =    -78.07063644936666
+	One-electron energy          =    -57.90651590112032
+	Two-electron energy          =     25.00682731296512
+	Reference energy             =    -78.07063644937119
+
+*** tstop() called on n412-047.vsc4.prov at Wed Jan 27 08:18:09 2021
+Module time:
+	user time   =    7047.91 seconds =     117.47 minutes
+	system time =    4517.70 seconds =      75.30 minutes
+	total time  =      17033 seconds =     283.88 minutes
+Total time:
+	user time   =   13434.49 seconds =     223.91 minutes
+	system time =    7728.19 seconds =     128.80 minutes
+	total time  =      30050 seconds =     500.83 minutes
+            **************************
+            *                        *
+            *        CCENERGY        *
+            *                        *
+            **************************
+
+    Nuclear Rep. energy (wfn)     =   33.410684914907506
+    SCF energy          (wfn)     =  -78.070636449366660
+    Reference energy    (file100) =  -78.070636449371193
+
+    Input parameters:
+    -----------------
+    Wave function   =     CCSD_T
+    Reference wfn   =     RHF
+    Brueckner       =     No
+    Memory (Mbytes) =     250000.0
+    Maxiter         =     50
+    R_Convergence   =     1.0e-07
+    E_Convergence   =     1.0e-06
+    Restart         =     Yes
+    DIIS            =     Yes
+    AO Basis        =     NONE
+    ABCD            =     NEW
+    Cache Level     =     2
+    Cache Type      =     LOW
+    Print Level     =     1
+    Num. of threads =     48
+    # Amps to Print =     10
+    Print MP2 Amps? =     No
+    Analyze T2 Amps =     No
+    Print Pair Ener =     No
+    Local CC        =     No
+    SCS-MP2         =     False
+    SCSN-MP2        =     False
+    SCS-CCSD        =     False
+
+MP2 correlation energy -0.3681926206735681
+                Solving CC Amplitude Equations
+                ------------------------------
+  Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag    D2Diag
+  ----     ---------------------    ---------   ----------  ----------  ----------   --------
+     0        -0.368192620673568    0.000e+00    0.000000    0.000000    0.000000    0.166152
+     1        -0.371610903104555    5.272e-02    0.009235    0.025053    0.025053    0.171952
+     2        -0.382068422409222    2.073e-02    0.009607    0.026952    0.026952    0.185086
+     3        -0.383758447065927    8.119e-03    0.011129    0.032062    0.032062    0.191159
+     4        -0.383702208146654    2.320e-03    0.011312    0.032977    0.032977    0.193310
+     5        -0.383764330100556    5.603e-04    0.011365    0.033246    0.033246    0.193776
+     6        -0.383765048255805    1.453e-04    0.011369    0.033281    0.033281    0.193814
+     7        -0.383761820972720    3.964e-05    0.011367    0.033282    0.033282    0.193817
+     8        -0.383761959978089    9.834e-06    0.011368    0.033284    0.033284    0.193819
+     9        -0.383762238283787    2.593e-06    0.011368    0.033284    0.033284    0.193819
+    10        -0.383762110820817    8.835e-07    0.011368    0.033285    0.033285    0.193819
+    11        -0.383762130320894    2.825e-07    0.011368    0.033285    0.033285    0.193819
+    12        -0.383762121869495    7.885e-08    0.011368    0.033285    0.033285    0.193819
+
+    Iterations converged.
+
+
+    Largest TIA Amplitudes:
+              5 786         0.0142633337
+              5 789         0.0127850944
+              5 792         0.0123734320
+              5 783         0.0094120209
+              5 794         0.0089286708
+              5 790         0.0086113382
+              5 784         0.0084798372
+              5 797         0.0075862387
+              5 785         0.0069447027
+              4 666         0.0067596673
+
+    Largest TIjAb Amplitudes:
+      5   5 222 222        -0.0791037844
+      5   5 222 223        -0.0420638790
+      5   5 223 222        -0.0420638790
+      5   5 222 225        -0.0357443353
+      5   5 225 222        -0.0357443353
+      5   5 221 222        -0.0238763899
+      5   5 222 221        -0.0238763899
+      5   5 222 226        -0.0238310670
+      5   5 226 222        -0.0238310670
+      5   5 223 223        -0.0227785955
+
+    SCF energy       (wfn)                    =  -78.070636449366660
+    Reference energy (file100)                =  -78.070636449371193
+
+    Opposite-spin MP2 correlation energy      =   -0.293975582045001
+    Same-spin MP2 correlation energy          =   -0.074217038628567
+    Singles MP2 correlation energy            =   -0.000000000000000
+    MP2 correlation energy                    =   -0.368192620673568
+      * MP2 total energy                      =  -78.438829070044761
+
+    Opposite-spin CCSD correlation energy     =   -0.315745507633867
+    Same-spin CCSD correlation energy         =   -0.068016614234885
+    Singles CCSD correlation energy           =    0.000000000000000
+    CCSD correlation energy                   =   -0.383762121869495
+      * CCSD total energy                     =  -78.454398571240688
+
+            **************************
+            *                        *
+            *        CCTRIPLES       *
+            *                        *
+            **************************
+
+
+    Wave function   =    CCSD_T
+    Reference wfn   =      RHF
+
+    Nuclear Rep. energy (wfn)                =   33.410684914907506
+    SCF energy          (wfn)                =  -78.070636449366660
+    Reference energy    (file100)            =  -78.070636449371193
+    CCSD energy         (file100)            =   -0.383762121869495
+    Total CCSD energy   (file100)            =  -78.454398571240688
+
+    Number of ijk index combinations:               56
+    Memory available in words        :     31250000000
+    ~Words needed per explicit thread:        11212884
+    Number of threads for explicit ijk threading:   48
+
+    (T) energy                                =   -0.016914773417564
+      * CCSD(T) total energy                  =  -78.471313344658256
+
+
+    Psi4 stopped on: Wednesday, 27 January 2021 09:55AM
+    Psi4 wall time for execution: 9:57:48.89
+
+*** Psi4 exiting successfully. Buy a developer a beer!

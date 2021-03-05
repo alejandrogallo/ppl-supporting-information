@@ -1,0 +1,18 @@
+# Any line starting with the # character is a comment line
+memory 250000 mb
+molecule molecule{
+1 3
+O          0.0000000000        0.0000000000        0.0606658924
+H          0.0000000000        0.0000000000       -0.9629718824
+}
+
+set {
+  reference uhf
+  basis aug-cc-pV(6+d)Z
+  scf_type OUT_OF_CORE
+  freeze_core true
+  DOCC [     3,    0,    0,    0 ]
+  SOCC [     0,    0,    1,    1 ]
+}
+
+energy('ccsd(t)')

@@ -1,0 +1,593 @@
+
+    -----------------------------------------------------------------------
+          Psi4: An Open-Source Ab Initio Electronic Structure Package
+                               Psi4 1.2a1.dev939 
+
+                         Git: Rev {HEAD} fa1ec19 
+
+
+    R. M. Parrish, L. A. Burns, D. G. A. Smith, A. C. Simmonett,
+    A. E. DePrince III, E. G. Hohenstein, U. Bozkaya, A. Yu. Sokolov,
+    R. Di Remigio, R. M. Richard, J. F. Gonthier, A. M. James,
+    H. R. McAlexander, A. Kumar, M. Saitow, X. Wang, B. P. Pritchard,
+    P. Verma, H. F. Schaefer III, K. Patkowski, R. A. King, E. F. Valeev,
+    F. A. Evangelista, J. M. Turney, T. D. Crawford, and C. D. Sherrill,
+    J. Chem. Theory Comput. 13(7) pp 3185--3197 (2017).
+    (doi: 10.1021/acs.jctc.7b00174)
+
+    -----------------------------------------------------------------------
+
+
+    Psi4 started on: Sunday, 28 April 2019 06:40PM
+
+    Process ID:  19064
+    PSIDATADIR: /home/grueneis/src/psi4/objdir/stage/usr/local/psi4/share/psi4
+    Memory:     500.0 MiB
+    Threads:    1
+    
+  ==> Input File <==
+
+--------------------------------------------------------------------------
+# Any line starting with the # character is a comment line
+
+memory 32000 mb
+
+molecule molecule {
+0 1
+Si        -0.0000000000        0.0000000000        1.1731981701
+Si        -0.0000000000        0.0000000000       -1.1731981701
+H          1.3875820969        0.0000000000        1.6832113841
+H         -0.6937910485        1.2016813458        1.6832113841
+H         -0.6937910485       -1.2016813458        1.6832113841
+H          0.6937910485        1.2016813458       -1.6832113841
+H          0.6937910485       -1.2016813458       -1.6832113841
+H         -1.3875820969        0.0000000000       -1.6832113841
+}
+
+set {
+  reference rhf
+  basis aug-cc-pv(Q+d)z
+  scf_type OUT_OF_CORE
+  freeze_core true
+}
+
+energy('ccsd')
+--------------------------------------------------------------------------
+
+  Memory set to  29.802 GiB by Python driver.
+
+*** tstart() called on cqc01
+*** at Sun Apr 28 18:40:07 2019
+
+   => Loading Basis Set <=
+
+    Name: AUG-CC-PV(Q+D)Z
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1-2 entry SI         line   952 file /home/grueneis/src/psi4/objdir/stage/usr/local/psi4/share/psi4/basis/aug-cc-pv_qpd_z.gbs 
+    atoms 3-8 entry H          line    56 file /home/grueneis/src/psi4/objdir/stage/usr/local/psi4/share/psi4/basis/aug-cc-pv_qpd_z.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+            by Justin Turney, Rob Parrish, Andy Simmonett
+                             and Daniel Smith
+                              RHF Reference
+                        1 Threads,  30517 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: c2h
+    Full point group: D3d
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 1:
+
+       Center              X                  Y                   Z               Mass       
+    ------------   -----------------  -----------------  -----------------  -----------------
+          SI          0.000000000000    -1.173198170100     0.000000000000    27.976926532460
+          SI         -0.000000000000     1.173198170100     0.000000000000    27.976926532460
+           H          0.693791048458    -1.683211384100     1.201681345786     1.007825032070
+           H         -1.387582096967    -1.683211384100     0.000000000000     1.007825032070
+           H          0.693791048458    -1.683211384100    -1.201681345786     1.007825032070
+           H         -0.693791048458     1.683211384100     1.201681345786     1.007825032070
+           H          1.387582096967     1.683211384100     0.000000000000     1.007825032070
+           H         -0.693791048458     1.683211384100    -1.201681345786     1.007825032070
+
+  Running in c2h symmetry.
+
+  Rotational constants: A =      1.44791  B =      0.16863  C =      0.16863 [cm^-1]
+  Rotational constants: A =  43407.36558  B =   5055.40181  C =   5055.40181 [MHz]
+  Nuclear repulsion =   90.826037651047713
+
+  Charge       = 0
+  Multiplicity = 1
+  Electrons    = 34
+  Nalpha       = 17
+  Nbeta        = 17
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is OUT_OF_CORE.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is SAD.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  Basis Set: AUG-CC-PV(Q+D)Z
+    Blend: AUG-CC-PV(Q+D)Z
+    Number of shells: 130
+    Number of basis function: 454
+    Number of Cartesian functions: 560
+    Spherical Harmonics?: true
+    Max angular momentum: 4
+
+  ==> Pre-Iterations <==
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     Ag       132     132       0       0       0       0
+     Bg        95      95       0       0       0       0
+     Au        95      95       0       0       0       0
+     Bu       132     132       0       0       0       0
+   -------------------------------------------------------
+    Total     454     454      17      17      17       0
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+  ==> DiskJK: Disk-Based J/K Matrices <==
+
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    Memory (MB):             22888
+    Schwarz Cutoff:          1E-12
+
+  Minimum eigenvalue in the overlap matrix is 2.0542696425E-06.
+  Using Symmetric Orthogonalization.
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF.
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     RMS |[F,P]|
+
+   @RHF iter   0:  -581.33346789001280   -5.81333e+02   1.01267e-02 
+   @RHF iter   1:  -581.34543773487155   -1.19698e-02   8.22981e-04 
+   @RHF iter   2:  -581.37949866201529   -3.40609e-02   2.31236e-04 DIIS
+   @RHF iter   3:  -581.38307458810675   -3.57593e-03   6.34192e-05 DIIS
+   @RHF iter   4:  -581.38338795466780   -3.13367e-04   1.43395e-05 DIIS
+   @RHF iter   5:  -581.38340503355107   -1.70789e-05   3.35477e-06 DIIS
+   @RHF iter   6:  -581.38340619279666   -1.15925e-06   4.04155e-07 DIIS
+   @RHF iter   7:  -581.38340620971337   -1.69167e-08   6.41678e-08 DIIS
+   @RHF iter   8:  -581.38340621013276   -4.19391e-10   1.43069e-08 DIIS
+   @RHF iter   9:  -581.38340621015016   -1.73941e-11   2.39966e-09 DIIS
+
+  ==> Post-Iterations <==
+
+    Orbital Energies (a.u.)
+    -----------------------
+
+    Doubly Occupied:                                                      
+
+       1Ag   -68.767899     1Bu   -68.767898     2Ag    -6.118506  
+       2Bu    -6.118359     3Ag    -4.224905     1Au    -4.224574  
+       3Bu    -4.224574     1Bg    -4.224495     4Ag    -4.224495  
+       4Bu    -4.224190     5Ag    -0.756911     5Bu    -0.679291  
+       2Au    -0.500884     6Bu    -0.500884     2Bg    -0.474560  
+       6Ag    -0.474560     7Ag    -0.403768  
+
+    Virtual:                                                              
+
+       8Ag     0.027525     7Bu     0.029646     8Bu     0.041300  
+       3Au     0.041300     9Ag     0.050979     3Bg     0.050979  
+      10Ag     0.052059     4Bg     0.060568    11Ag     0.060568  
+       9Bu     0.078272     4Au     0.079461    10Bu     0.079461  
+      11Bu     0.099598    12Ag     0.112446    12Bu     0.118224  
+       5Au     0.118224    13Ag     0.127030     5Bg     0.127030  
+      13Bu     0.133024     6Au     0.133024    14Ag     0.140931  
+      14Bu     0.148945     6Bg     0.162651    15Ag     0.162651  
+       7Au     0.184162    15Bu     0.184162    16Bu     0.194666  
+      17Bu     0.205947     8Au     0.225384    18Bu     0.225384  
+      16Ag     0.227770     7Bg     0.231825    17Ag     0.231825  
+      18Ag     0.233747     9Au     0.235995     8Bg     0.246496  
+      19Ag     0.246496     9Bg     0.271706    19Bu     0.272214  
+      10Au     0.272214    10Bg     0.281645    20Ag     0.281645  
+      20Bu     0.324941    21Ag     0.339766    11Bg     0.339766  
+      22Ag     0.341637    11Au     0.360381    21Bu     0.360381  
+      22Bu     0.361287    23Ag     0.363487    23Bu     0.366273  
+      24Ag     0.367971    12Bg     0.367971    12Au     0.395179  
+      24Bu     0.395179    25Bu     0.407704    25Ag     0.431192  
+      26Bu     0.439430    13Au     0.439430    14Au     0.440238  
+      26Ag     0.443094    27Bu     0.455721    15Au     0.455721  
+      28Bu     0.458173    13Bg     0.465108    27Ag     0.465108  
+      28Ag     0.484969    16Au     0.492406    29Bu     0.492406  
+      29Ag     0.498092    14Bg     0.498092    15Bg     0.508918  
+      30Ag     0.508918    30Bu     0.519234    17Au     0.519234  
+      16Bg     0.550827    31Ag     0.588078    17Bg     0.588078  
+      32Ag     0.631737    18Au     0.635327    31Bu     0.642054  
+      32Bu     0.695225    33Ag     0.714848    18Bg     0.714848  
+      19Au     0.735358    33Bu     0.735358    34Bu     0.740575  
+      19Bg     0.760354    34Ag     0.765896    20Au     0.779823  
+      35Bu     0.779823    20Bg     0.784503    35Ag     0.784503  
+      21Au     0.803465    36Bu     0.803465    36Ag     0.808841  
+      37Bu     0.814178    21Bg     0.819450    37Ag     0.819450  
+      38Ag     0.846584    22Bg     0.846584    38Bu     0.856802  
+      22Au     0.856802    39Ag     0.859932    23Bg     0.893978  
+      40Ag     0.893978    39Bu     0.894949    23Au     0.905046  
+      40Bu     0.905046    24Bg     0.930705    25Bg     0.930718  
+      41Ag     0.930718    42Ag     0.932931    24Au     0.973159  
+      25Au     0.973363    41Bu     0.973363    43Ag     0.979063  
+      26Bg     0.979063    42Bu     0.994588    26Au     0.994588  
+      43Bu     1.007361    44Ag     1.008097    45Ag     1.026201  
+      27Bg     1.026201    44Bu     1.028320    27Au     1.028320  
+      28Au     1.058577    28Bg     1.079615    46Ag     1.081711  
+      29Bg     1.081711    45Bu     1.089040    29Au     1.100627  
+      46Bu     1.100627    47Ag     1.169212    47Bu     1.170395  
+      48Bu     1.211927    30Au     1.211927    49Bu     1.232160  
+      48Ag     1.239995    31Au     1.240464    49Ag     1.268914  
+      30Bg     1.268914    50Bu     1.323444    50Ag     1.323764  
+      32Au     1.344316    51Bu     1.344316    51Ag     1.350553  
+      31Bg     1.350553    52Bu     1.416492    33Au     1.416492  
+      32Bg     1.425208    52Ag     1.425208    53Ag     1.436831  
+      54Ag     1.490065    34Au     1.499414    53Bu     1.499414  
+      55Ag     1.504894    33Bg     1.504894    54Bu     1.519532  
+      34Bg     1.528292    56Ag     1.554037    35Bg     1.554037  
+      55Bu     1.571881    56Bu     1.599879    35Au     1.599879  
+      36Bg     1.625470    57Ag     1.625470    57Bu     1.631398  
+      58Bu     1.662831    36Au     1.662831    58Ag     1.675060  
+      37Bg     1.697587    59Ag     1.697587    37Au     1.721166  
+      59Bu     1.740498    38Au     1.749262    60Bu     1.749262  
+      39Au     1.797460    61Bu     1.797460    38Bg     1.838829  
+      60Ag     1.838829    39Bg     1.843351    61Ag     1.868832  
+      40Bg     1.895270    40Au     1.919749    62Bu     1.919749  
+      41Bg     1.921159    62Ag     1.921159    63Bu     2.000357  
+      41Au     2.000357    42Au     2.022843    64Bu     2.028771  
+      63Ag     2.059391    42Bg     2.059391    43Au     2.063649  
+      65Bu     2.063649    64Ag     2.080380    65Ag     2.087460  
+      43Bg     2.087460    44Au     2.094352    44Bg     2.100263  
+      66Ag     2.100263    45Bg     2.105831    67Ag     2.105981  
+      66Bu     2.114707    67Bu     2.138098    45Au     2.138098  
+      46Bg     2.173596    68Ag     2.173596    69Ag     2.193199  
+      68Bu     2.215217    46Au     2.215217    69Bu     2.237334  
+      70Ag     2.261155    47Bg     2.261155    71Ag     2.285273  
+      70Bu     2.293005    47Au     2.296355    71Bu     2.296355  
+      48Au     2.308168    72Bu     2.308168    48Bg     2.385139  
+      72Ag     2.385139    49Bg     2.393514    73Ag     2.414176  
+      50Bg     2.452050    74Ag     2.452050    73Bu     2.456097  
+      49Au     2.456097    50Au     2.504506    74Bu     2.508741  
+      75Ag     2.521292    51Au     2.555795    75Bu     2.555795  
+      76Bu     2.558095    76Ag     2.560345    51Bg     2.560345  
+      52Au     2.574129    77Ag     2.607885    53Au     2.637986  
+      77Bu     2.637986    52Bg     2.658421    78Ag     2.658421  
+      78Bu     2.684631    54Au     2.684631    79Bu     2.733266  
+      53Bg     2.765312    79Ag     2.765312    80Bu     2.778030  
+      80Ag     2.786162    81Ag     2.814942    54Bg     2.814942  
+      55Au     2.828234    81Bu     2.828234    55Bg     2.835220  
+      82Ag     2.835220    56Au     2.846737    82Bu     2.846737  
+      83Ag     2.848043    57Au     2.869304    83Bu     2.884683  
+      56Bg     2.906171    57Bg     2.946732    84Ag     2.957376  
+      58Bg     2.957376    84Bu     2.964117    58Au     2.964117  
+      85Ag     2.984211    85Bu     3.067291    86Ag     3.072374  
+      87Ag     3.089670    59Bg     3.089670    86Bu     3.090691  
+      59Au     3.090691    60Au     3.098346    87Bu     3.157651  
+      61Au     3.157651    88Bu     3.211827    88Ag     3.222282  
+      89Ag     3.275728    60Bg     3.275728    61Bg     3.306929  
+      89Bu     3.408612    62Bg     3.440736    90Ag     3.440736  
+      62Au     3.466980    90Bu     3.466980    63Au     3.469205  
+      91Ag     3.500202    63Bg     3.500202    92Ag     3.510748  
+      91Bu     3.532136    64Au     3.532136    64Bg     3.533449  
+      93Ag     3.575273    65Bg     3.575273    92Bu     3.617451  
+      65Au     3.617451    93Bu     3.632025    94Ag     3.663348  
+      66Bg     3.663348    66Au     3.772858    94Bu     3.772858  
+      95Ag     3.819894    95Bu     3.883687    96Ag     3.961485  
+      67Bg     3.961485    96Bu     3.970837    67Au     3.970837  
+      68Au     4.093801    97Bu     4.093801    68Bg     4.102259  
+      97Ag     4.102259    98Bu     4.112435    98Ag     4.113015  
+      69Au     4.143926    99Ag     4.246313    69Bg     4.246313  
+     100Ag     4.277596    70Bg     4.297032    70Au     4.319966  
+      99Bu     4.319966   100Bu     4.514482   101Bu     6.174880  
+      71Au     6.174880   101Ag     6.270389    71Bg     6.270389  
+     102Ag     6.434501   102Bu     6.495536    72Au     6.495536  
+     103Bu     6.514024   103Ag     6.542753    72Bg     6.542753  
+      73Bg     6.691356    73Au     6.717112   104Bu     6.717112  
+      74Au     6.729111    74Bg     6.737704   104Ag     6.737704  
+     105Bu     6.770962    75Au     6.770962   105Ag     6.807647  
+     106Ag     6.811791    75Bg     6.811791   106Bu     6.814044  
+     107Bu     6.967748   107Ag     6.972790    76Bg     6.997698  
+     108Bu     7.007241    76Au     7.007241   108Ag     7.015504  
+      77Bg     7.015504    77Au     7.029484   109Bu     7.036168  
+     110Bu     7.111603    78Au     7.111603   109Ag     7.122458  
+      78Bg     7.122458   110Ag     7.126166    79Au     7.135668  
+     111Bu     7.135668    79Bg     7.148215   111Ag     7.148215  
+     112Bu     7.377303    80Au     7.377303   112Ag     7.393813  
+      80Bg     7.393813   113Ag     7.404509    81Au     7.447002  
+      81Bg     7.470175   113Bu     7.521449   114Bu     7.709951  
+      82Au     7.709951   114Ag     7.712471    82Bg     7.712471  
+     115Ag     8.127151    83Bg     8.127151   115Bu     8.152708  
+      83Au     8.152708   116Bu     8.155669   116Ag     8.332392  
+     117Bu     8.427168    84Bg     8.475696   117Ag     8.475696  
+     118Ag     8.479344   118Bu     8.491285    84Au     8.491285  
+      85Au     8.591142   119Bu     8.616836    86Au     8.616836  
+     119Ag     8.628999    85Bg     8.628999   120Ag     8.712781  
+     121Ag     8.725724    86Bg     8.725724   120Bu     8.781823  
+      87Au     8.781823   121Bu     8.804532    87Bg     8.817010  
+      88Au     8.817355   122Bu     8.865263    89Au     8.865263  
+      88Bg     8.869262   122Ag     8.875782    89Bg     8.898201  
+     123Ag     8.898201    90Bg     8.932937   124Ag     8.932937  
+     123Bu     9.002929    90Au     9.006161   124Bu     9.006161  
+      91Au     9.384053   125Bu     9.408574    91Bg     9.446797  
+     125Ag     9.446797   126Ag     9.471055    92Bg     9.485124  
+     126Bu     9.526849    92Au     9.526849   127Ag     9.528775  
+      93Bg     9.528775   127Bu     9.553573    93Au     9.553573  
+     128Bu     9.709343    94Au     9.709343   128Ag     9.716068  
+      94Bg     9.716068   129Ag     9.798968   129Bu     9.898080  
+     130Bu     9.975790   130Ag    10.671459    95Bg    11.563332  
+     131Ag    11.563332   131Bu    11.662858    95Au    11.662858  
+     132Ag    14.794501   132Bu    15.526951  
+
+    Final Occupation by Irrep:
+             Ag    Bg    Au    Bu 
+    DOCC [     7,    2,    2,    6 ]
+
+  Energy converged.
+
+  @RHF Final Energy:  -581.38340621015016
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =             90.8260376510477130
+    One-Electron Energy =                -986.5973851351465100
+    Two-Electron Energy =                 314.3879412739486270
+    Total Energy =                       -581.3834062101501559
+
+
+
+Properties will be evaluated at   0.000000,   0.000000,   0.000000 Bohr
+
+Properties computed using the SCF density matrix
+
+  Nuclear Dipole Moment: (a.u.)
+     X:     0.0000      Y:    -0.0000      Z:     0.0000
+
+  Electronic Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Dipole Moment: (a.u.)
+     X:     0.0000      Y:    -0.0000      Z:     0.0000     Total:     0.0000
+
+  Dipole Moment: (Debye)
+     X:     0.0000      Y:    -0.0000      Z:     0.0000     Total:     0.0000
+
+
+*** tstop() called on cqc01 at Sun Apr 28 19:01:33 2019
+Module time:
+	user time   =     596.34 seconds =       9.94 minutes
+	system time =      90.82 seconds =       1.51 minutes
+	total time  =       1286 seconds =      21.43 minutes
+Total time:
+	user time   =     596.34 seconds =       9.94 minutes
+	system time =      90.82 seconds =       1.51 minutes
+	total time  =       1286 seconds =      21.43 minutes
+
+*** tstart() called on cqc01
+*** at Sun Apr 28 19:01:33 2019
+
+
+	Wfn Parameters:
+	--------------------
+	Wavefunction         = CCSD
+	Number of irreps     = 4
+	Number of MOs        = 454
+	Number of active MOs = 444
+	AO-Basis             = NONE
+	Semicanonical        = false
+	Reference            = RHF
+	Print Level          = 1
+
+	IRREP	# MOs	# FZDC	# DOCC	# SOCC	# VIRT	# FZVR
+	-----	-----	------	------	------	------	------
+	 Ag	   132	    4	    3	    0	    125	    0
+	 Bg	   95	    1	    1	    0	    93	    0
+	 Au	   95	    1	    1	    0	    93	    0
+	 Bu	   132	    4	    2	    0	    126	    0
+	Transforming integrals...
+	IWL integrals will be deleted.
+	(OO|OO)...
+	Presorting SO-basis two-electron integrals.
+	Sorting File: SO Ints (nn|nn) nbuckets = 1
+	Transforming the one-electron integrals and constructing Fock matrices
+	Starting first half-transformation.
+	Sorting half-transformed integrals.
+	First half integral transformation complete.
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OO|OV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OO|VV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OV|OO)...
+	Starting first half-transformation.
+	Sorting half-transformed integrals.
+	First half integral transformation complete.
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OV|OV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(OV|VV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(VV|OO)...
+	Starting first half-transformation.
+	Sorting half-transformed integrals.
+	First half integral transformation complete.
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(VV|OV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	(VV|VV)...
+	Starting second half-transformation.
+	Two-electron integral transformation complete.
+	Frozen core energy     =   -642.42236747565994
+
+	Size of irrep 0 of <ab|cd> integrals:   2381.342 (MW) /  19050.739 (MB)
+	Size of irrep 1 of <ab|cd> integrals:   2179.583 (MW) /  17436.661 (MB)
+	Size of irrep 2 of <ab|cd> integrals:   2179.583 (MW) /  17436.661 (MB)
+	Size of irrep 3 of <ab|cd> integrals:   2381.245 (MW) /  19049.958 (MB)
+	Total:                                  9121.752 (MW) /  72974.019 (MB)
+
+	Size of irrep 0 of <ia|bc> integrals:     39.674 (MW) /    317.389 (MB)
+	Size of irrep 1 of <ia|bc> integrals:     33.427 (MW) /    267.417 (MB)
+	Size of irrep 2 of <ia|bc> integrals:     33.427 (MW) /    267.417 (MB)
+	Size of irrep 3 of <ia|bc> integrals:     39.722 (MW) /    317.773 (MB)
+	Total:                                   146.250 (MW) /   1169.996 (MB)
+
+	Size of irrep 0 of tijab amplitudes:       0.732 (MW) /      5.856 (MB)
+	Size of irrep 1 of tijab amplitudes:       0.467 (MW) /      3.735 (MB)
+	Size of irrep 2 of tijab amplitudes:       0.467 (MW) /      3.735 (MB)
+	Size of irrep 3 of tijab amplitudes:       0.683 (MW) /      5.465 (MB)
+	Total:                                     2.349 (MW) /     18.791 (MB)
+
+	Nuclear Rep. energy          =     90.82603765104771
+	SCF energy                   =   -581.38340621015016
+	One-electron energy          =    -51.99243988664048
+	Two-electron energy          =     22.20536350109935
+	Reference energy             =   -581.38340621015334
+
+*** tstop() called on cqc01 at Sun Apr 28 21:42:16 2019
+Module time:
+	user time   =    1212.94 seconds =      20.22 minutes
+	system time =     485.21 seconds =       8.09 minutes
+	total time  =       9643 seconds =     160.72 minutes
+Total time:
+	user time   =    1809.28 seconds =      30.15 minutes
+	system time =     576.03 seconds =       9.60 minutes
+	total time  =      10929 seconds =     182.15 minutes
+
+*** tstart() called on cqc01
+*** at Sun Apr 28 21:42:46 2019
+
+            **************************
+            *                        *
+            *        CCENERGY        *
+            *                        *
+            **************************
+
+    Nuclear Rep. energy (wfn)     =   90.826037651047713
+    SCF energy          (wfn)     = -581.383406210150156
+    Reference energy    (file100) = -581.383406210153339
+
+    Input parameters:
+    -----------------
+    Wave function   =     CCSD
+    Reference wfn   =     RHF
+    Brueckner       =     No
+    Memory (Mbytes) =     32000.0
+    Maxiter         =     50
+    R_Convergence   =     1.0e-07
+    E_Convergence   =     1.0e-06
+    Restart         =     Yes
+    DIIS            =     Yes
+    AO Basis        =     NONE
+    ABCD            =     NEW
+    Cache Level     =     2
+    Cache Type      =     LOW
+    Print Level     =     1
+    Num. of threads =     1
+    # Amps to Print =     10
+    Print MP2 Amps? =     No
+    Analyze T2 Amps =     No
+    Print Pair Ener =     No
+    Local CC        =     No
+    SCS-MP2         =     False
+    SCSN-MP2        =     False
+    SCS-CCSD        =     False
+
+MP2 correlation energy -0.2854206512145830
+                Solving CC Amplitude Equations
+                ------------------------------
+  Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag    D2Diag
+  ----     ---------------------    ---------   ----------  ----------  ----------   --------
+     0        -0.285420651214503    0.000e+00    0.000000    0.000000    0.000000    0.138839
+     1        -0.358731207373065    2.274e-01    0.014666    0.027426    0.027426    0.184369
+     2        -0.335474929605885    3.715e-02    0.012294    0.022676    0.022676    0.170795
+     3        -0.331266965794690    8.171e-03    0.012670    0.023795    0.023795    0.167934
+     4        -0.330871403956926    2.077e-03    0.012667    0.023750    0.023750    0.167653
+     5        -0.330766128993417    6.062e-04    0.012730    0.023885    0.023885    0.167516
+     6        -0.330760287057308    1.873e-04    0.012767    0.023959    0.023959    0.167489
+     7        -0.330771400824176    7.149e-05    0.012784    0.023992    0.023992    0.167491
+     8        -0.330774540440760    2.488e-05    0.012791    0.024005    0.024005    0.167493
+     9        -0.330774264003373    7.383e-06    0.012793    0.024009    0.024009    0.167493
+    10        -0.330774261514428    1.726e-06    0.012793    0.024009    0.024009    0.167494
+    11        -0.330774303839148    5.165e-07    0.012793    0.024009    0.024009    0.167494
+    12        -0.330774321891715    1.829e-07    0.012793    0.024009    0.024009    0.167494
+    13        -0.330774323550065    5.741e-08    0.012793    0.024009    0.024009    0.167494
+    13        -0.330774323550065    5.741e-08    0.012793    0.024009    0.024009    0.167494
+
+    Iterations converged.
+
+
+    CCSD corr. energy   =   -0.330774323550065
+    PPL corr. energy    =    0.104802117241575
+    OS PPL corr. energy =    0.096750790558116
+    SS PPL corr. energy =    0.008051326683454
+    Largest TIA Amplitudes:
+              4 220         0.0166092259
+              6 316         0.0166091302
+              2   4         0.0111491967
+              4 222        -0.0106782778
+              6 319        -0.0106781919
+              2  10        -0.0102755628
+              3 130        -0.0075353352
+              1  11        -0.0075352890
+              5 327        -0.0074814768
+              4 221         0.0071358959
+
+    Largest TIjAb Amplitudes:
+      2   2 316 316        -0.0245583189
+      2   2 220 220        -0.0245583171
+      2   2 321 321        -0.0213655266
+      4   4 220 220        -0.0189773969
+      6   6 316 316        -0.0189773939
+      2   2 316 319         0.0186358937
+      2   2 319 316         0.0186358937
+      2   2 220 222         0.0186358909
+      2   2 222 220         0.0186358909
+      3   3 220 220        -0.0181548480
+
+    SCF energy       (wfn)                    = -581.383406210150156
+    Reference energy (file100)                = -581.383406210153339
+
+    Opposite-spin MP2 correlation energy      =   -0.250040501030515
+    Same-spin MP2 correlation energy          =   -0.035380150183988
+    MP2 correlation energy                    =   -0.285420651214583
+      * MP2 total energy                      = -581.668826861367961
+
+    Opposite-spin CCSD correlation energy     =   -0.292328144865098
+    Same-spin CCSD correlation energy         =   -0.038446176483826
+    CCSD correlation energy                   =   -0.330774323550065
+      * CCSD total energy                     = -581.714180533703370
+
+
+*** tstop() called on cqc01 at Mon Apr 29 00:33:00 2019
+Module time:
+	user time   =     210.50 seconds =       3.51 minutes
+	system time =     502.58 seconds =       8.38 minutes
+	total time  =      10214 seconds =     170.23 minutes
+Total time:
+	user time   =    2019.78 seconds =      33.66 minutes
+	system time =    1078.62 seconds =      17.98 minutes
+	total time  =      21173 seconds =     352.88 minutes
+
+*** Psi4 exiting successfully. Buy a developer a beer!

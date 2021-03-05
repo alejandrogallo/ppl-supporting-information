@@ -1,0 +1,425 @@
+
+    -----------------------------------------------------------------------
+          Psi4: An Open-Source Ab Initio Electronic Structure Package
+                               Psi4 1.2a1.dev939 
+
+                         Git: Rev {HEAD} fa1ec19 
+
+
+    R. M. Parrish, L. A. Burns, D. G. A. Smith, A. C. Simmonett,
+    A. E. DePrince III, E. G. Hohenstein, U. Bozkaya, A. Yu. Sokolov,
+    R. Di Remigio, R. M. Richard, J. F. Gonthier, A. M. James,
+    H. R. McAlexander, A. Kumar, M. Saitow, X. Wang, B. P. Pritchard,
+    P. Verma, H. F. Schaefer III, K. Patkowski, R. A. King, E. F. Valeev,
+    F. A. Evangelista, J. M. Turney, T. D. Crawford, and C. D. Sherrill,
+    J. Chem. Theory Comput. 13(7) pp 3185--3197 (2017).
+    (doi: 10.1021/acs.jctc.7b00174)
+
+    -----------------------------------------------------------------------
+
+
+    Psi4 started on: Tuesday, 30 April 2019 05:39PM
+
+    Process ID:   2865
+    PSIDATADIR: /home/grueneis/src/psi4/objdir/stage/usr/local/psi4/share/psi4
+    Memory:     500.0 MiB
+    Threads:    1
+    
+  ==> Input File <==
+
+--------------------------------------------------------------------------
+# Any line starting with the # character is a comment line
+
+memory 32000 mb
+
+molecule molecule {
+0 3
+Si         0.0000000000        0.0000000000       -1.0836042810
+Si         0.0000000000        0.0000000000        1.0836042810
+}
+
+set {
+  reference rohf
+  DOCC [     5,    0,    1,    1,    0,    4,    1,    1 ]
+  SOCC [     0,    0,    0,    0,    0,    0,    1,    1 ]
+  basis aug-cc-pv(D+d)z
+  scf_type OUT_OF_CORE
+  mp2_type conv
+  freeze_core true
+}
+
+energy('mp2')
+--------------------------------------------------------------------------
+
+  Memory set to  29.802 GiB by Python driver.
+
+*** tstart() called on cqc01
+*** at Tue Apr 30 17:39:02 2019
+
+   => Loading Basis Set <=
+
+    Name: AUG-CC-PV(D+D)Z
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1-2 entry SI         line   588 file /home/grueneis/src/psi4/objdir/stage/usr/local/psi4/share/psi4/basis/aug-cc-pv_dpd_z.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+            by Justin Turney, Rob Parrish, Andy Simmonett
+                             and Daniel Smith
+                             ROHF Reference
+                        1 Threads,  30517 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: d2h
+    Full point group: D_inf_h
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 3:
+
+       Center              X                  Y                   Z               Mass       
+    ------------   -----------------  -----------------  -----------------  -----------------
+          SI          0.000000000000     0.000000000000    -1.083604281000    27.976926532460
+          SI          0.000000000000     0.000000000000     1.083604281000    27.976926532460
+
+  Running in d2h symmetry.
+
+  Rotational constants: A = ************  B =      0.25658  C =      0.25658 [cm^-1]
+  Rotational constants: A = ************  B =   7692.11509  C =   7692.11509 [MHz]
+  Nuclear repulsion =   47.858214803250668
+
+  Charge       = 0
+  Multiplicity = 3
+  Electrons    = 28
+  Nalpha       = 15
+  Nbeta        = 13
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is OUT_OF_CORE.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is GWH.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  Basis Set: AUG-CC-PV(D+D)Z
+    Blend: AUG-CC-PV(D+D)Z
+    Number of shells: 24
+    Number of basis function: 64
+    Number of Cartesian functions: 70
+    Spherical Harmonics?: true
+    Max angular momentum: 2
+
+  ==> Pre-Iterations <==
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     Ag        15      15       5       5       5       0
+     B1g        3       3       0       0       0       0
+     B2g        7       7       1       1       1       0
+     B3g        7       7       1       1       1       0
+     Au         3       3       0       0       0       0
+     B1u       15      15       4       4       4       0
+     B2u        7       7       2       1       1       1
+     B3u        7       7       2       1       1       1
+   -------------------------------------------------------
+    Total      64      64      15      13      13       2
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+  ==> DiskJK: Disk-Based J/K Matrices <==
+
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    Memory (MB):             22888
+    Schwarz Cutoff:          1E-12
+
+  Minimum eigenvalue in the overlap matrix is 6.1043758272E-04.
+  Using Symmetric Orthogonalization.
+
+  SCF Guess: Generalized Wolfsberg-Helmholtz.
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     RMS |[F,P]|
+
+   @ROHF iter   1:  -574.22222317535011   -5.74222e+02   9.49180e-02 
+   @ROHF iter   2:  -577.66806529117571   -3.44584e+00   1.21215e-02 DIIS
+   @ROHF iter   3:  -577.75730084919667   -8.92356e-02   2.39821e-03 DIIS
+   @ROHF iter   4:  -577.76272531304073   -5.42446e-03   4.62309e-04 DIIS
+   @ROHF iter   5:  -577.76296714021964   -2.41827e-04   7.08028e-05 DIIS
+   @ROHF iter   6:  -577.76297801008832   -1.08699e-05   1.61366e-05 DIIS
+   @ROHF iter   7:  -577.76297871386998   -7.03782e-07   2.50795e-06 DIIS
+   @ROHF iter   8:  -577.76297873035003   -1.64800e-08   4.82825e-07 DIIS
+   @ROHF iter   9:  -577.76297873085491   -5.04883e-10   1.06358e-07 DIIS
+   @ROHF iter  10:  -577.76297873089834   -4.34284e-11   1.81619e-08 DIIS
+   @ROHF iter  11:  -577.76297873089993   -1.59162e-12   3.64756e-09 DIIS
+
+  ==> Post-Iterations <==
+
+    Orbital Energies (a.u.)
+    -----------------------
+
+    Doubly Occupied:                                                      
+
+       1Ag   -68.800378     1B1u  -68.800376     2Ag    -6.147045  
+       2B1u   -6.146752     1B2u   -4.248278     1B3u   -4.248278  
+       1B3g   -4.248111     1B2g   -4.248111     3Ag    -4.247605  
+       3B1u   -4.246111     4Ag    -0.688421     4B1u   -0.464505  
+       5Ag    -0.298786  
+
+    Singly Occupied:                                                      
+
+       2B3u   -0.161712     2B2u   -0.161712  
+
+    Virtual:                                                              
+
+       2B2g    0.040849     2B3g    0.040849     5B1u    0.046550  
+       3B3u    0.072764     3B2u    0.072764     6Ag     0.076042  
+       7Ag     0.081355     3B2g    0.116635     3B3g    0.116635  
+       6B1u    0.158625     1B1g    0.186837     8Ag     0.186837  
+       7B1u    0.212459     4B3u    0.250488     4B2u    0.250488  
+       9Ag     0.280032     8B1u    0.285249     1Au     0.285249  
+       4B3g    0.375741     4B2g    0.375741     9B1u    0.395263  
+       5B3u    0.525485     5B2u    0.525485    10Ag     0.562481  
+      11Ag     0.588492    10B1u    0.627096     5B3g    0.628975  
+       5B2g    0.628975     6B3u    0.628991     6B2u    0.628991  
+       2B1g    0.650490    12Ag     0.650490    11B1u    0.722779  
+       2Au     0.722779    13Ag     0.783857     6B3g    0.860149  
+       6B2g    0.860149    12B1u    1.017752    13B1u    1.215604  
+       3B1g    3.313426    14Ag     3.313426     7B3u    3.334077  
+       7B2u    3.334077     3Au     3.352814    14B1u    3.352814  
+      15B1u    3.413154     7B3g    3.421762     7B2g    3.421762  
+      15Ag     3.485197  
+
+    Final Occupation by Irrep:
+             Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
+    DOCC [     5,    0,    1,    1,    0,    4,    1,    1 ]
+    SOCC [     0,    0,    0,    0,    0,    0,    1,    1 ]
+
+  Energy converged.
+
+  @ROHF Final Energy:  -577.76297873089993
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =             47.8582148032506680
+    One-Electron Energy =                -896.9292925552491624
+    Two-Electron Energy =                 271.3080990210984851
+    Total Energy =                       -577.7629787308999312
+
+
+
+Properties will be evaluated at   0.000000,   0.000000,   0.000000 Bohr
+
+Properties computed using the SCF density matrix
+
+  Nuclear Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Electronic Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+  Dipole Moment: (Debye)
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+
+*** tstop() called on cqc01 at Tue Apr 30 17:39:03 2019
+Module time:
+	user time   =       0.94 seconds =       0.02 minutes
+	system time =       0.29 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
+Total time:
+	user time   =       0.94 seconds =       0.02 minutes
+	system time =       0.29 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
+
+*** tstart() called on cqc01
+*** at Tue Apr 30 17:39:03 2019
+
+
+
+  Options:
+  ----------------------------------------------------------------------------
+  ACTIVE                        => [  ]             
+  BASIS_RELATIVISTIC            => (empty)          
+  BENCH                         => 0                
+  CACHELEVEL                    => 2                
+  CCL_ENERGY                    => FALSE            
+  CC_DIIS_MAX_VECS              => 6                
+  CC_DIIS_MIN_VECS              => 2                
+  CC_MAXITER                    => 50               
+  CC_TYPE                       => CONV             
+  CEPA_OS_SCALE                 => 1.27             
+  CEPA_SOS_SCALE                => 1.3              
+  CEPA_SS_SCALE                 => 1.13             
+  CEPA_TYPE                     => CEPA0            
+  CI_TYPE                       => CONV             
+  CUBEPROP_BASIS_FUNCTIONS      => [  ]             
+  CUBEPROP_FILEPATH             => .                
+  CUBEPROP_ISOCONTOUR_THRESHOLD => 0.85             
+  CUBEPROP_ORBITALS             => [  ]             
+  CUBEPROP_TASKS                => [  ]             
+  CUBIC_BASIS_TOLERANCE         => 1e-12            
+  CUBIC_BLOCK_MAX_POINTS        => 1000             
+  CUBIC_GRID_OVERAGE            => [  ]             
+  CUBIC_GRID_SPACING            => [  ]             
+  CUTOFF                        => 14               
+  DEBUG                         => 0                
+  DERTYPE                       => NONE             
+  DF_BASIS_CC                   => (empty)          
+  DIE_IF_NOT_CONVERGED          => TRUE             
+  DKH_ORDER                     => 2                
+  DOCC                          => [ 5, 0, 1, 1, 0, 4, 1, 1 ] !
+  DO_DIIS                       => TRUE             
+  DO_LEVEL_SHIFT                => TRUE             
+  DO_SCS                        => FALSE           !
+  DO_SOS                        => FALSE           !
+  E3_SCALE                      => 0.25             
+  EA_POLES                      => FALSE            
+  EKT_EA                        => FALSE            
+  EKT_IP                        => FALSE            
+  EP_EA_POLES                   => FALSE            
+  EP_IP_POLES                   => FALSE            
+  EP_MAXITER                    => 30               
+  EXTERNAL_POTENTIAL_SYMMETRY   => FALSE            
+  E_CONVERGENCE                 => 1e-06           !
+  FREEZE_CORE                   => TRUE            !
+  FROZEN_DOCC                   => [  ]             
+  FROZEN_UOCC                   => [  ]             
+  INTEGRAL_PACKAGE              => LIBINT           
+  IP_POLES                      => FALSE            
+  LEVEL_SHIFT                   => 0.02             
+  LINEQ_SOLVER                  => CDGESV           
+  LITERAL_CFOUR                 => (empty)          
+  MAT_NUM_COLUMN_PRINT          => 5                
+  MAX_MOGRAD_CONVERGENCE        => 0.001            
+  MOGRAD_DAMPING                => 1                
+  MOLDEN_WITH_VIRTUAL           => TRUE             
+  MO_DIIS_NUM_VECS              => 6                
+  MO_MAXITER                    => 50               
+  MO_READ                       => FALSE            
+  MO_STEP_MAX                   => 0.5              
+  MO_WRITE                      => FALSE            
+  MP2_OS_SCALE                  => 1.2              
+  MP2_SOS_SCALE                 => 1.3              
+  MP2_SOS_SCALE2                => 1.2              
+  MP2_SS_SCALE                  => 0.333333         
+  MP2_TYPE                      => CONV            !
+  MP_TYPE                       => CONV             
+  NAT_ORBS                      => FALSE            
+  NUM_FROZEN_DOCC               => 0                
+  NUM_FROZEN_UOCC               => 0                
+  OCC_ORBS_PRINT                => FALSE            
+  OEPROP                        => FALSE            
+  OPT_METHOD                    => ORB_RESP         
+  ORB_OPT                       => FALSE           !
+  ORB_RESP_SOLVER               => PCG              
+  ORTH_TYPE                     => MGS              
+  PCG_BETA_TYPE                 => FLETCHER_REEVES  
+  PCG_CONVERGENCE               => 1e-06            
+  PCG_MAXITER                   => 30               
+  PCM                           => FALSE            
+  PCMSOLVER_PARSED_FNAME        => (empty)          
+  PCM_CC_TYPE                   => PTE              
+  PCM_SCF_TYPE                  => TOTAL            
+  PRINT                         => 1                
+  PRINT_NOONS                   => 3                
+  PROPERTIES                    => [  ]             
+  PROPERTIES_ORIGIN             => [  ]             
+  PUREAM                        => TRUE             
+  QC_MODULE                     => (empty)          
+  RAS1                          => [  ]             
+  RAS2                          => [  ]             
+  RAS3                          => [  ]             
+  RAS4                          => [  ]             
+  RELATIVISTIC                  => NO               
+  RELAXED                       => TRUE             
+  RESTRICTED_DOCC               => [  ]             
+  RESTRICTED_UOCC               => [  ]             
+  RMS_MOGRAD_CONVERGENCE        => 1e-06            
+  R_CONVERGENCE                 => 1e-05            
+  SCS_TYPE                      => SCS              
+  SOCC                          => [ 0, 0, 0, 0, 0, 0, 1, 1 ] !
+  SOS_TYPE                      => SOS              
+  SYMMETRIZE                    => TRUE             
+  TPDM_ABCD_TYPE                => DIRECT           
+  UNITS                         => ANGSTROMS        
+  WFN                           => SCF              
+  WFN_TYPE                      => OMP2            !
+  WRITER_FILE_LABEL             => (empty)          
+
+
+ ============================================================================== 
+ ============================================================================== 
+ ============================================================================== 
+
+                       MP2   
+              Program Written by Ugur Bozkaya,
+              Latest Revision June 25, 2014.
+
+ ============================================================================== 
+ ============================================================================== 
+ ============================================================================== 
+
+	RMS orbital gradient is changed to :     1.00e-05
+	MAX orbital gradient is changed to :     3.16e-04
+	MO spaces per irreps... 
+
+	IRREP   FC   AOCC  BOCC  AVIR    BVIR  FV 
+	==========================================
+	  Ag     3     2     2    10     10     0
+	 B1g     0     0     0     3      3     0
+	 B2g     1     0     0     6      6     0
+	 B3g     1     0     0     6      6     0
+	  Au     0     0     0     3      3     0
+	 B1u     3     1     1    11     11     0
+	 B2u     1     1     0     5      6     0
+	 B3u     1     1     0     5      6     0
+	==========================================
+
+	Computing MP2 energy using SCF MOs (ROHF-MP2)... 
+	============================================================================== 
+	Nuclear Repulsion Energy (a.u.)    :    47.85821480325067
+	SCF Energy (a.u.)                  :  -577.76297873089993
+	REF Energy (a.u.)                  :  -577.76297873089993
+	Alpha-Alpha Contribution (a.u.)    :    -0.02684358805386
+	Alpha-Beta Contribution (a.u.)     :    -0.10140663219813
+	Beta-Beta Contribution (a.u.)      :    -0.00439837395394
+	Scaled_SS Correlation Energy (a.u.):    -0.01041398733593
+	Scaled_OS Correlation Energy (a.u.):    -0.12168795863775
+	SCS-MP2 Total Energy (a.u.)        :  -577.89508067687359
+	SOS-MP2 Total Energy (a.u.)        :  -577.89480735275754
+	SCSN-MP2 Total Energy (a.u.)       :  -577.81796458403369
+	SCS-MP2-VDW Total Energy (a.u.)    :  -577.90840020111750
+	SOS-PI-MP2 Total Energy (a.u.)     :  -577.90494801597731
+	MP2 Singles Energy (a.u.)          :    -0.00200005051705
+	MP2 Doubles Energy (a.u.)          :    -0.13264859420593
+	MP2 Correlation Energy (a.u.)      :    -0.13464864472298
+	MP2 Total Energy (a.u.)            :  -577.89762737562296
+	============================================================================== 
+
+*** tstop() called on cqc01 at Tue Apr 30 17:39:04 2019
+Module time:
+	user time   =       0.18 seconds =       0.00 minutes
+	system time =       0.22 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
+Total time:
+	user time   =       1.12 seconds =       0.02 minutes
+	system time =       0.51 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
+
+*** Psi4 exiting successfully. Buy a developer a beer!

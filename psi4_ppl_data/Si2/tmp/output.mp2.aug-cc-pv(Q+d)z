@@ -1,0 +1,351 @@
+
+    -----------------------------------------------------------------------
+          Psi4: An Open-Source Ab Initio Electronic Structure Package
+                               Psi4 1.2a1.dev939 
+
+                         Git: Rev {HEAD} fa1ec19 
+
+
+    R. M. Parrish, L. A. Burns, D. G. A. Smith, A. C. Simmonett,
+    A. E. DePrince III, E. G. Hohenstein, U. Bozkaya, A. Yu. Sokolov,
+    R. Di Remigio, R. M. Richard, J. F. Gonthier, A. M. James,
+    H. R. McAlexander, A. Kumar, M. Saitow, X. Wang, B. P. Pritchard,
+    P. Verma, H. F. Schaefer III, K. Patkowski, R. A. King, E. F. Valeev,
+    F. A. Evangelista, J. M. Turney, T. D. Crawford, and C. D. Sherrill,
+    J. Chem. Theory Comput. 13(7) pp 3185--3197 (2017).
+    (doi: 10.1021/acs.jctc.7b00174)
+
+    -----------------------------------------------------------------------
+
+
+    Psi4 started on: Wednesday, 01 May 2019 09:01PM
+
+    Process ID:  21433
+    PSIDATADIR: /home/grueneis/src/psi4/objdir/stage/usr/local/psi4/share/psi4
+    Memory:     500.0 MiB
+    Threads:    1
+    
+  ==> Input File <==
+
+--------------------------------------------------------------------------
+# Any line starting with the # character is a comment line
+
+memory 32000 mb
+
+molecule molecule {
+0 3
+Si         0.0000000000        0.0000000000       -1.0836042810
+Si         0.0000000000        0.0000000000        1.0836042810
+}
+
+set {
+  reference rohf
+  DOCC [     5,    0,    1,    1,    0,    4,    1,    1 ]
+  SOCC [     0,    0,    0,    0,    0,    0,    1,    1 ]
+  basis aug-cc-pv(Q+d)z
+  scf_type OUT_OF_CORE
+  mp2_type conv
+  freeze_core true
+}
+
+energy('mp2')
+--------------------------------------------------------------------------
+
+  Memory set to  29.802 GiB by Python driver.
+
+*** tstart() called on cqc03
+*** at Wed May  1 21:01:46 2019
+
+   => Loading Basis Set <=
+
+    Name: AUG-CC-PV(Q+D)Z
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1-2 entry SI         line   952 file /home/grueneis/src/psi4/objdir/stage/usr/local/psi4/share/psi4/basis/aug-cc-pv_qpd_z.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+            by Justin Turney, Rob Parrish, Andy Simmonett
+                             and Daniel Smith
+                             ROHF Reference
+                        1 Threads,  30517 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: d2h
+    Full point group: D_inf_h
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 3:
+
+       Center              X                  Y                   Z               Mass       
+    ------------   -----------------  -----------------  -----------------  -----------------
+          SI          0.000000000000     0.000000000000    -1.083604281000    27.976926532460
+          SI          0.000000000000     0.000000000000     1.083604281000    27.976926532460
+
+  Running in d2h symmetry.
+
+  Rotational constants: A = ************  B =      0.25658  C =      0.25658 [cm^-1]
+  Rotational constants: A = ************  B =   7692.11509  C =   7692.11509 [MHz]
+  Nuclear repulsion =   47.858214803250668
+
+  Charge       = 0
+  Multiplicity = 3
+  Electrons    = 28
+  Nalpha       = 15
+  Nbeta        = 13
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is OUT_OF_CORE.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is GWH.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  Basis Set: AUG-CC-PV(Q+D)Z
+    Blend: AUG-CC-PV(Q+D)Z
+    Number of shells: 46
+    Number of basis function: 178
+    Number of Cartesian functions: 230
+    Spherical Harmonics?: true
+    Max angular momentum: 4
+
+  ==> Pre-Iterations <==
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     Ag        35      35       5       5       5       0
+     B1g       12      12       0       0       0       0
+     B2g       21      21       1       1       1       0
+     B3g       21      21       1       1       1       0
+     Au        12      12       0       0       0       0
+     B1u       35      35       4       4       4       0
+     B2u       21      21       2       1       1       1
+     B3u       21      21       2       1       1       1
+   -------------------------------------------------------
+    Total     178     178      15      13      13       2
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+  ==> DiskJK: Disk-Based J/K Matrices <==
+
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    Memory (MB):             22888
+    Schwarz Cutoff:          1E-12
+
+  Minimum eigenvalue in the overlap matrix is 3.0898489715E-05.
+  Using Symmetric Orthogonalization.
+
+  SCF Guess: Generalized Wolfsberg-Helmholtz.
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     RMS |[F,P]|
+
+   @ROHF iter   1:  -570.89844155326364   -5.70898e+02   4.83743e-02 
+   @ROHF iter   2:  -577.57227564859761   -6.67383e+00   7.86452e-03 DIIS
+   @ROHF iter   3:  -577.76557054708951   -1.93295e-01   1.86050e-03 DIIS
+   @ROHF iter   4:  -577.77914381565552   -1.35733e-02   2.57353e-04 DIIS
+   @ROHF iter   5:  -577.77951660647034   -3.72791e-04   4.24000e-05 DIIS
+   @ROHF iter   6:  -577.77953770423449   -2.10978e-05   1.26904e-05 DIIS
+   @ROHF iter   7:  -577.77953985841498   -2.15418e-06   2.83502e-06 DIIS
+   @ROHF iter   8:  -577.77954002523052   -1.66816e-07   6.67082e-07 DIIS
+   @ROHF iter   9:  -577.77954003472269   -9.49217e-09   1.21803e-07 DIIS
+   @ROHF iter  10:  -577.77954003497678   -2.54090e-10   2.64074e-08 DIIS
+   @ROHF iter  11:  -577.77954003499258   -1.58025e-11   3.46790e-09 DIIS
+
+  ==> Post-Iterations <==
+
+    Orbital Energies (a.u.)
+    -----------------------
+
+    Doubly Occupied:                                                      
+
+       1Ag   -68.796301     1B1u  -68.796298     2Ag    -6.143767  
+       2B1u   -6.143425     1B3u   -4.244939     1B2u   -4.244939  
+       1B3g   -4.244768     1B2g   -4.244768     3Ag    -4.244505  
+       3B1u   -4.242980     4Ag    -0.685246     4B1u   -0.463073  
+       5Ag    -0.297898  
+
+    Singly Occupied:                                                      
+
+       2B3u   -0.160260     2B2u   -0.160260  
+
+    Virtual:                                                              
+
+       5B1u    0.032061     2B3g    0.037789     2B2g    0.037789  
+       6Ag     0.045828     3B2u    0.050467     3B3u    0.050467  
+       7Ag     0.062696     3B3g    0.074415     3B2g    0.074415  
+       8Ag     0.107229     1B1g    0.107229     6B1u    0.107356  
+       7B1u    0.146594     9Ag     0.152832     8B1u    0.153254  
+       1Au     0.153254     4B2u    0.153516     4B3u    0.153516  
+       4B3g    0.178215     4B2g    0.178215     9B1u    0.225869  
+       5B2u    0.252867     5B3u    0.252867    10Ag     0.264222  
+      11Ag     0.300447     2B1g    0.300447     6B2u    0.311622  
+       6B3u    0.311622    12Ag     0.334897     7B2u    0.338692  
+       7B3u    0.338692    10B1u    0.339656     5B3g    0.352461  
+       5B2g    0.352461    11B1u    0.368572     2Au     0.368572  
+      13Ag     0.387672     3B1g    0.391395    14Ag     0.391395  
+       6B2g    0.392085     6B3g    0.392085     7B3g    0.399671  
+       7B2g    0.399671    12B1u    0.438945     8B3u    0.497077  
+       8B2u    0.497077    13B1u    0.512410     3Au     0.512410  
+      14B1u    0.538123    15Ag     0.614069     8B3g    0.669375  
+       8B2g    0.669375    15B1u    0.733642     9B2u    0.791683  
+       9B3u    0.791683     4B1g    0.806828    16Ag     0.806828  
+      17Ag     0.863821     4Au     0.898921    16B1u    0.898921  
+      10B2u    0.900302    10B3u    0.900302     9B3g    0.911057  
+       9B2g    0.911057    18Ag     0.943800     5B1g    0.944130  
+      19Ag     0.944130     6B1g    0.970963    20Ag     0.970963  
+      17B1u    1.005030    10B2g    1.008197    10B3g    1.008197  
+      11B2u    1.029274    11B3u    1.029274    12B2u    1.042391  
+      12B3u    1.042391    13B2u    1.095741    13B3u    1.095741  
+      18B1u    1.098602     5Au     1.098602     6Au     1.104715  
+      19B1u    1.104715    11B3g    1.183216    11B2g    1.183216  
+      21Ag     1.208146    20B1u    1.239118    22Ag     1.254179  
+       7B1g    1.254179    12B2g    1.270394    12B3g    1.270394  
+      13B3g    1.297851    13B2g    1.297851    21B1u    1.360014  
+      23Ag     1.378500    14B2u    1.551332    14B3u    1.551332  
+      22B1u    1.562899     7Au     1.562899    23B1u    1.646184  
+      14B2g    1.705259    14B3g    1.705259    24B1u    1.797006  
+      24Ag     1.886816     8B1g    1.952924    25Ag     1.952924  
+      15B2u    2.004575    15B3u    2.004575     8Au     2.062417  
+      25B1u    2.062417    26Ag     2.261038    27Ag     2.344229  
+       9B1g    2.344229    16B2u    2.371964    16B3u    2.371964  
+      28Ag     2.402268    17B2u    2.414681    17B3u    2.414681  
+      15B3g    2.421904    15B2g    2.421904    16B3g    2.495893  
+      16B2g    2.495893    26B1u    2.533960    27B1u    2.549515  
+       9Au     2.549515    18B2u    2.597671    18B3u    2.597671  
+      10B1g    2.632414    29Ag     2.632414    17B2g    2.636487  
+      17B3g    2.636487    30Ag     2.643051    11B1g    2.643051  
+      28B1u    2.695477    10Au     2.695477    18B3g    2.846258  
+      18B2g    2.846258    19B2u    2.877908    19B3u    2.877908  
+      29B1u    2.931726    11Au     3.123321    30B1u    3.123321  
+      31Ag     3.177044    31B1u    3.337877    19B2g    3.430847  
+      19B3g    3.430847    20B2u    5.312113    20B3u    5.312113  
+      20B2g    5.915605    20B3g    5.915605    32Ag     6.087390  
+      12B1g    6.087390    12Au     6.147149    32B1u    6.147149  
+      21B2u    6.169644    21B3u    6.169644    33Ag     6.248441  
+      33B1u    6.478912    21B2g    6.579522    21B3g    6.579522  
+      34Ag     7.061233    34B1u    7.642417    35B1u   10.299429  
+      35Ag    10.307675  
+
+    Final Occupation by Irrep:
+             Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
+    DOCC [     5,    0,    1,    1,    0,    4,    1,    1 ]
+    SOCC [     0,    0,    0,    0,    0,    0,    1,    1 ]
+
+  Energy converged.
+
+  @ROHF Final Energy:  -577.77954003499258
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =             47.8582148032506680
+    One-Electron Energy =                -897.0427073603477766
+    Two-Electron Energy =                 271.4049525221045087
+    Total Energy =                       -577.7795400349925785
+
+
+
+Properties will be evaluated at   0.000000,   0.000000,   0.000000 Bohr
+
+Properties computed using the SCF density matrix
+
+  Nuclear Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Electronic Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+  Dipole Moment: (Debye)
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+
+*** tstop() called on cqc03 at Wed May  1 21:02:00 2019
+Module time:
+	user time   =      13.19 seconds =       0.22 minutes
+	system time =       0.55 seconds =       0.01 minutes
+	total time  =         14 seconds =       0.23 minutes
+Total time:
+	user time   =      13.19 seconds =       0.22 minutes
+	system time =       0.55 seconds =       0.01 minutes
+	total time  =         14 seconds =       0.23 minutes
+
+*** tstart() called on cqc03
+*** at Wed May  1 21:02:00 2019
+
+
+ ============================================================================== 
+ ============================================================================== 
+ ============================================================================== 
+
+                       MP2   
+              Program Written by Ugur Bozkaya,
+              Latest Revision June 25, 2014.
+
+ ============================================================================== 
+ ============================================================================== 
+ ============================================================================== 
+
+	RMS orbital gradient is changed to :     1.00e-05
+	MAX orbital gradient is changed to :     3.16e-04
+	MO spaces per irreps... 
+
+	IRREP   FC   AOCC  BOCC  AVIR    BVIR  FV 
+	==========================================
+	  Ag     3     2     2    30     30     0
+	 B1g     0     0     0    12     12     0
+	 B2g     1     0     0    20     20     0
+	 B3g     1     0     0    20     20     0
+	  Au     0     0     0    12     12     0
+	 B1u     3     1     1    31     31     0
+	 B2u     1     1     0    19     20     0
+	 B3u     1     1     0    19     20     0
+	==========================================
+
+	Computing MP2 energy using SCF MOs (ROHF-MP2)... 
+	============================================================================== 
+	Nuclear Repulsion Energy (a.u.)    :    47.85821480325067
+	SCF Energy (a.u.)                  :  -577.77954003499258
+	REF Energy (a.u.)                  :  -577.77954003499258
+	Alpha-Alpha Contribution (a.u.)    :    -0.03188290874937
+	Alpha-Beta Contribution (a.u.)     :    -0.13508223505202
+	Beta-Beta Contribution (a.u.)      :    -0.00514710283241
+	Scaled_SS Correlation Energy (a.u.):    -0.01234333719393
+	Scaled_OS Correlation Energy (a.u.):    -0.16209868206242
+	SCS-MP2 Total Energy (a.u.)        :  -577.95398205424885
+	SOS-MP2 Total Energy (a.u.)        :  -577.95514694056021
+	SCSN-MP2 Total Energy (a.u.)       :  -577.84471285537643
+	SCS-MP2-VDW Total Energy (a.u.)    :  -577.97096030165005
+	SOS-PI-MP2 Total Energy (a.u.)     :  -577.96865516406535
+	MP2 Singles Energy (a.u.)          :    -0.00215584759575
+	MP2 Doubles Energy (a.u.)          :    -0.17211224663380
+	MP2 Correlation Energy (a.u.)      :    -0.17426809422955
+	MP2 Total Energy (a.u.)            :  -577.95380812922212
+	============================================================================== 
+
+*** tstop() called on cqc03 at Wed May  1 21:02:08 2019
+Module time:
+	user time   =       5.60 seconds =       0.09 minutes
+	system time =       2.85 seconds =       0.05 minutes
+	total time  =          8 seconds =       0.13 minutes
+Total time:
+	user time   =      18.80 seconds =       0.31 minutes
+	system time =       3.40 seconds =       0.06 minutes
+	total time  =         22 seconds =       0.37 minutes
+
+*** Psi4 exiting successfully. Buy a developer a beer!
