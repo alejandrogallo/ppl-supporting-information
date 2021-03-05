@@ -12,6 +12,8 @@
 
 <!-- markdown-toc end -->
 
+[![DOI](https://zenodo.org/badge/344758845.svg)](https://zenodo.org/badge/latestdoi/344758845)
+
 # Introduction
 
 This repository contains simulation results of molecular quantum
