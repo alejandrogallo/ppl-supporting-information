@@ -94,16 +94,14 @@ In addition, the `PSI4` energies are also provided in these files:
 
 ## `NWCHEM+CC4S` ##
 
-- HF orbitals are taken from NWCHEM and used for CCSD calculations using the code `cc4s`.
+- HF orbitals are taken from `NwChem` and used for CCSD calculations using the code `cc4s`.
 - The number of natural orbitals per occupied orbital is given in the first column.
 - nwXz means that all possible virtual orbitals are used.
 - The reference (Ref) is the [56] `PSI4` energy.
-
+- Hartree Fock 6Z values are also provided, as taken from `PSI4`
+- Hartree Fock QZ/5Z values are taken from `NwChem`
 In `*_ppl` CCSD, PPL, MP2, and REST energies are given.
-Further shown are corrected ppl values (CPPL)
-- `noqz_ppl/`
-- `no5z_ppl/`
+Further shown are corrected ppl values (CPPL), and the (T) energies.
+- `noqz/`
+- `no5z/`
 
-In `*_triples` the (T) energies are provided
-- `noqz_triples/`
-- `no5z_triples/`
