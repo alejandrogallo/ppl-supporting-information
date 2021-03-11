@@ -25,14 +25,14 @@ Data is given for the aug-cc-pVXZ basis set family (AVXZ).
 
 Note that for all calculations, the HF groundstate energy between
 `TURBOMOLE`, `NWCHEM`, and `PSI4`
-agreed better than 1.5E-5 Hartree.
+agree better than 1.5E-5 Hartree.
 
 
 # Molecular geometries #
 
-The list of used molecular geometries taken from the supplement of
+The employed molecular geometries can be found in
 [this publication](https://doi.org/10.1063/1.3054300).
-In this repository the list is found in the file:
+The list of studied systems can be found in the following file:
 
 - `jcp_systems.dat`
 
@@ -48,7 +48,7 @@ Lists of reactions analysed in the given publication
 
 # `PSI4` calculations output #
 
-The stdout of `PSI4` calculations for the given set of molecules.
+The stdout of `PSI4` calculations for the given set of molecules is also included in this repository.
 For techncical reasons two independent calculations were necessary for
 the evaluation of the
 PPL-contribution and for the conventional CCSD(T) calculation.
@@ -60,16 +60,14 @@ modified (see [this publication](https://doi.org/10.1063/1.5110885)):
 
 # Calculated energies #
 
-Extracted energy contributions of the individual molecules
+All extracted energy contributions of the individual molecules
 for different basis sets from `PSI4`, `TURBOMOLE` (f12...), and
-`NWCHEM+cc4s`
-
-All energies in these data sets are given in Hartree units.
+`NWCHEM+cc4s` are given in Hartree units.
 
 
 ## `PSI4` ##
 
-Given is HF, CCSD, MP2, PPL, REST, and (T) contributions.
+HF, CCSD, MP2, PPL, REST, and (T) energy contributions are given.
 Values are given for AVDZ-AV6Z, as well as the extrapolated values.
 
 The data is found in the directory
